@@ -32,7 +32,7 @@ defmodule AcaiWeb.Live.Components.FeatureStatusDropdown do
       @inherited && "badge-soft",
       @badge_class
     ]}>
-      {@label}
+      {translate_status_label(@label)}
     </span>
     """
   end
@@ -109,6 +109,15 @@ defmodule AcaiWeb.Live.Components.FeatureStatusDropdown do
   end
 
   def valid_statuses, do: @valid_statuses
+
+  defp translate_status_label("No status"), do: gettext("No status")
+  defp translate_status_label("assigned"), do: gettext("assigned")
+  defp translate_status_label("blocked"), do: gettext("blocked")
+  defp translate_status_label("incomplete"), do: gettext("incomplete")
+  defp translate_status_label("completed"), do: gettext("completed")
+  defp translate_status_label("rejected"), do: gettext("rejected")
+  defp translate_status_label("accepted"), do: gettext("accepted")
+  defp translate_status_label(label), do: label
 
   defp acid_dom_id(acid), do: String.replace(acid, ".", "-")
 
