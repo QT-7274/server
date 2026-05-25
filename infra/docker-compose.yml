@@ -12,8 +12,8 @@ services:
             - "${HTTPS_PORT:-443}:443"
             - "${HTTPS_PORT:-443}:443/udp"
         volumes:
-            # Copy Caddyfile to configure reverse proxy
-            - ./caddy/Caddyfile.${CADDYFILE:-prod}:/etc/caddy/Caddyfile:ro
+            # Mount entire caddy config dir (Colima virtiofs doesn't support single-file bind mounts)
+            - ./caddy-mount:/etc/caddy:ro
             # To persist certs and tls state across container rebuilds
             - caddy_data:/data
             # In case we use json api to push live-updates and want to persist it
