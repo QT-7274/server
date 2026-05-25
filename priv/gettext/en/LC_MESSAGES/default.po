@@ -24,6 +24,7 @@ msgstr ""
 
 #: lib/acai_web/components/layouts.ex:130
 #: lib/acai_web/controllers/user_registration_html/new.html.heex:9
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:38
 #: lib/acai_web/controllers/user_session_html/new.html.heex:5
 #, elixir-autogen, elixir-format
 msgid "Log in"
@@ -78,6 +79,7 @@ msgid "%{pct}% covered"
 msgstr ""
 
 #: lib/acai_web/live/team_live.ex:391
+#: lib/acai_web/live/team_tokens_live.ex:209
 #, elixir-autogen, elixir-format
 msgid "Access Tokens"
 msgstr ""
@@ -102,17 +104,34 @@ msgstr ""
 msgid "Branch"
 msgstr ""
 
+#: lib/acai_web/live/components/feature_settings_live.ex:439
+#: lib/acai_web/live/components/feature_settings_live.ex:579
+#: lib/acai_web/live/components/feature_settings_live.ex:699
+#: lib/acai_web/live/components/implementation_settings_live.ex:592
+#: lib/acai_web/live/components/implementation_settings_live.ex:666
+#: lib/acai_web/live/components/implementation_settings_live.ex:797
 #: lib/acai_web/live/team_live.ex:491
 #: lib/acai_web/live/team_live.ex:557
 #: lib/acai_web/live/team_live.ex:624
+#: lib/acai_web/live/team_settings_live.ex:215
+#: lib/acai_web/live/team_tokens_live.ex:499
 #: lib/acai_web/live/teams_live.ex:233
 #, elixir-autogen, elixir-format
 msgid "Cancel"
 msgstr ""
 
+#: lib/acai_web/live/components/feature_settings_live.ex:411
+#: lib/acai_web/live/components/feature_settings_live.ex:527
+#: lib/acai_web/live/components/feature_settings_live.ex:662
+#: lib/acai_web/live/components/implementation_settings_live.ex:629
+#: lib/acai_web/live/components/implementation_settings_live.ex:738
 #: lib/acai_web/live/team_live.ex:454
 #: lib/acai_web/live/team_live.ex:522
 #: lib/acai_web/live/team_live.ex:587
+#: lib/acai_web/live/team_settings_live.ex:189
+#: lib/acai_web/live/team_settings_live.ex:244
+#: lib/acai_web/live/team_tokens_live.ex:399
+#: lib/acai_web/live/team_tokens_live.ex:529
 #: lib/acai_web/live/teams_live.ex:206
 #, elixir-autogen, elixir-format
 msgid "Close"
@@ -200,6 +219,7 @@ msgstr ""
 #: lib/acai_web/controllers/user_registration_html/new.html.heex:20
 #: lib/acai_web/controllers/user_session_html/new.html.heex:35
 #: lib/acai_web/controllers/user_session_html/new.html.heex:53
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:15
 #, elixir-autogen, elixir-format
 msgid "Email"
 msgstr ""
@@ -219,6 +239,7 @@ msgstr ""
 msgid "Failed to update status"
 msgstr ""
 
+#: lib/acai_web/live/components/feature_settings_live.ex:282
 #: lib/acai_web/live/feature_live.ex:17
 #: lib/acai_web/live/product_live.ex:275
 #: lib/acai_web/live/product_live.ex:287
@@ -226,6 +247,7 @@ msgstr ""
 msgid "Feature"
 msgstr ""
 
+#: lib/acai_web/live/components/feature_settings_live.ex:249
 #: lib/acai_web/live/implementation_live.ex:1030
 #, elixir-autogen, elixir-format
 msgid "Feature Settings"
@@ -280,6 +302,7 @@ msgstr ""
 msgid "Implementations of this feature"
 msgstr ""
 
+#: lib/acai_web/live/components/requirement_details_live.ex:256
 #: lib/acai_web/live/implementation_live.ex:1271
 #: lib/acai_web/live/implementation_live.ex:1442
 #, elixir-autogen, elixir-format
@@ -322,6 +345,7 @@ msgstr ""
 msgid "Log in with email"
 msgstr ""
 
+#: lib/acai_web/live/team_settings_live.ex:209
 #: lib/acai_web/live/teams_live.ex:228
 #, elixir-autogen, elixir-format
 msgid "Lowercase letters, numbers, and hyphens only."
@@ -338,6 +362,7 @@ msgid "Manage your teams and create new ones."
 msgstr ""
 
 #: lib/acai_web/live/team_live.ex:324
+#: lib/acai_web/live/team_settings_live.ex:261
 #, elixir-autogen, elixir-format
 msgid "Members"
 msgstr ""
@@ -377,6 +402,7 @@ msgstr ""
 msgid "No spec has been pushed for this implementation. It has been inherited from"
 msgstr ""
 
+#: lib/acai_web/live/components/feature_status_dropdown.ex:86
 #: lib/acai_web/live/implementation_live.ex:1804
 #, elixir-autogen, elixir-format
 msgid "No status"
@@ -387,6 +413,7 @@ msgstr ""
 msgid "No teams yet"
 msgstr ""
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:497
 #: lib/acai_web/live/implementation_live.ex:1375
 #, elixir-autogen, elixir-format
 msgid "No tracked branches"
@@ -434,6 +461,7 @@ msgstr ""
 msgid "Product not found"
 msgstr ""
 
+#: lib/acai_web/live/components/nav_live.ex:168
 #: lib/acai_web/live/team_live.ex:285
 #, elixir-autogen, elixir-format
 msgid "Products"
@@ -470,12 +498,14 @@ msgstr ""
 msgid "Repo"
 msgstr ""
 
+#: lib/acai_web/live/components/requirement_details_live.ex:356
 #: lib/acai_web/live/implementation_live.ex:1323
 #: lib/acai_web/live/implementation_live.ex:1401
 #, elixir-autogen, elixir-format
 msgid "Repository URI"
 msgstr ""
 
+#: lib/acai_web/live/components/requirement_details_live.ex:212
 #: lib/acai_web/live/implementation_live.ex:1624
 #, elixir-autogen, elixir-format
 msgid "Requirement"
@@ -502,7 +532,10 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:455
+#: lib/acai_web/live/components/implementation_settings_live.ex:602
 #: lib/acai_web/live/team_live.ex:560
+#: lib/acai_web/live/team_settings_live.ex:218
 #, elixir-autogen, elixir-format
 msgid "Save"
 msgstr ""
@@ -517,6 +550,7 @@ msgstr ""
 msgid "Sign up"
 msgstr ""
 
+#: lib/acai_web/live/components/requirement_details_live.ex:232
 #: lib/acai_web/live/implementation_live.ex:1063
 #: lib/acai_web/live/implementation_live.ex:1477
 #: lib/acai_web/live/implementation_live.ex:1612
@@ -534,6 +568,7 @@ msgstr ""
 msgid "Team Overview"
 msgstr ""
 
+#: lib/acai_web/live/team_settings_live.ex:205
 #: lib/acai_web/live/teams_live.ex:223
 #, elixir-autogen, elixir-format
 msgid "Team name"
@@ -575,6 +610,7 @@ msgstr ""
 msgid "To see sent emails, visit"
 msgstr ""
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:471
 #: lib/acai_web/live/implementation_live.ex:1371
 #, elixir-autogen, elixir-format
 msgid "Tracked Branches"
@@ -661,6 +697,7 @@ msgstr ""
 msgid "or"
 msgstr ""
 
+#: lib/acai_web/live/components/requirement_details_live.ex:278
 #: lib/acai_web/live/implementation_live.ex:1291
 #: lib/acai_web/live/implementation_live.ex:1462
 #, elixir-autogen, elixir-format
@@ -695,4 +732,763 @@ msgstr ""
 #: lib/acai_web/controllers/user_registration_html/new.html.heex:11
 #, elixir-autogen, elixir-format
 msgid "to your account now."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:566
+#, elixir-autogen, elixir-format
+msgid "%{count} of %{total} branches selected"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:232
+#, elixir-autogen, elixir-format
+msgid "About Team Access Tokens"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:262
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Access tokens"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Account Settings"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:482
+#, elixir-autogen, elixir-format
+msgid "Add"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:114
+#, elixir-autogen, elixir-format
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:425
+#, elixir-autogen, elixir-format
+msgid "Any inherited states from parent implementations will remain."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:537
+#, elixir-autogen, elixir-format
+msgid "Are you sure you want to revoke this token?"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:641
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Branch:"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:63
+#, elixir-autogen, elixir-format
+msgid "Build rich, interactive web applications quickly, with less code and fewer moving parts. Join our growing community of developers using Phoenix to craft APIs, HTML5 apps and more, for fun or at scale."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:177
+#, elixir-autogen, elixir-format
+msgid "Cannot change role: this is the last owner."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:619
+#, elixir-autogen, elixir-format
+msgid "Cannot delete an inherited spec."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:227
+#, elixir-autogen, elixir-format
+msgid "Cannot remove the last owner of the team."
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:21
+#, elixir-autogen, elixir-format
+msgid "Change Email"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:139
+#, elixir-autogen, elixir-format
+msgid "Change the name of your team."
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:133
+#, elixir-autogen, elixir-format
+msgid "Changelog"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:21
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:45
+#, elixir-autogen, elixir-format
+msgid "Changing..."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:764
+#, elixir-autogen, elixir-format
+msgid "Child implementations will be preserved, but lose any inherited states and references."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:405
+#, elixir-autogen, elixir-format
+msgid "Clear All States?"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:521
+#, elixir-autogen, elixir-format
+msgid "Clear Code References?"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:492
+#, elixir-autogen, elixir-format
+msgid "Clear Refs"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:589
+#, elixir-autogen, elixir-format
+msgid "Clear Selected"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:384
+#, elixir-autogen, elixir-format
+msgid "Clear States"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:366
+#, elixir-autogen, elixir-format
+msgid "Clear all states (status and comments) that have been applied to ACIDs in this feature."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:474
+#, elixir-autogen, elixir-format
+msgid "Clear code references that have been pushed from tracked branches."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:257
+#: lib/acai_web/live/components/implementation_settings_live.ex:331
+#: lib/acai_web/live/components/requirement_details_live.ex:199
+#: lib/acai_web/live/components/requirement_details_live.ex:414
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Close drawer"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:468
+#, elixir-autogen, elixir-format
+msgid "Code References"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:649
+#, elixir-autogen, elixir-format
+msgid "Code references from this branch will no longer appear in the feature view."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:371
+#, elixir-autogen, elixir-format
+msgid "Coming soon"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:295
+#, elixir-autogen, elixir-format
+msgid "Comment"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:448
+#, elixir-autogen, elixir-format
+msgid "Confirm Clear"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:24
+#, elixir-autogen, elixir-format
+msgid "Confirm and log in only this time"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:21
+#, elixir-autogen, elixir-format
+msgid "Confirm and stay logged in"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:40
+#, elixir-autogen, elixir-format
+msgid "Confirm new password"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "Confirming..."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:433
+#, elixir-autogen, elixir-format
+msgid "Copied!"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:427
+#, elixir-autogen, elixir-format
+msgid "Copy token"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:392
+#, elixir-autogen, elixir-format
+msgid "Create Access Token"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:219
+#: lib/acai_web/live/team_tokens_live.ex:502
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Create Token"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:265
+#: lib/acai_web/live/team_tokens_live.ex:347
+#, elixir-autogen, elixir-format
+msgid "Created by"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:608
+#: lib/acai_web/live/components/implementation_settings_live.ex:688
+#, elixir-autogen, elixir-format
+msgid "Danger Zone"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:693
+#: lib/acai_web/live/components/implementation_settings_live.ex:708
+#: lib/acai_web/live/components/implementation_settings_live.ex:807
+#, elixir-autogen, elixir-format
+msgid "Delete Implementation"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:732
+#, elixir-autogen, elixir-format
+msgid "Delete Implementation?"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:613
+#: lib/acai_web/live/components/feature_settings_live.ex:634
+#: lib/acai_web/live/components/feature_settings_live.ex:708
+#, elixir-autogen, elixir-format
+msgid "Delete Spec"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:656
+#, elixir-autogen, elixir-format
+msgid "Delete Spec?"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:153
+#: lib/acai_web/live/team_settings_live.ex:164
+#: lib/acai_web/live/team_settings_live.ex:238
+#: lib/acai_web/live/team_settings_live.ex:297
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Delete Team"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "Deleting this team will cascade-delete all associated data, including:"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:195
+#, elixir-autogen, elixir-format
+msgid "Deploy your application"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:150
+#, elixir-autogen, elixir-format
+msgid "Discuss on the Elixir Forum"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:468
+#, elixir-autogen, elixir-format
+msgid "Done"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:492
+#, elixir-autogen, elixir-format
+msgid "Expiration (optional)"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:341
+#, elixir-autogen, elixir-format
+msgid "Expired"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:356
+#, elixir-autogen, elixir-format
+msgid "Expired on"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Expires"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:115
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Failed to clear states"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:275
+#, elixir-autogen, elixir-format
+msgid "Failed to delete implementation"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:204
+#, elixir-autogen, elixir-format
+msgid "Failed to delete spec"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:190
+#, elixir-autogen, elixir-format
+msgid "Failed to revoke token. Please try again."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:186
+#, elixir-autogen, elixir-format
+msgid "Failed to track branch"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:236
+#, elixir-autogen, elixir-format
+msgid "Failed to untrack branch"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:360
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Feature States"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:670
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Feature:"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:85
+#, elixir-autogen, elixir-format
+msgid "Guides & Docs"
+msgstr ""
+
+#: lib/acai_web/live/components/nav_live.ex:161
+#, elixir-autogen, elixir-format
+msgid "Home"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:685
+#, elixir-autogen, elixir-format
+msgid "If a parent spec exists, its requirements will be used instead. If no parent spec exists, you will be redirected to the product page."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:275
+#: lib/acai_web/live/components/implementation_settings_live.ex:349
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Implementation"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:425
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Implementation Name"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:323
+#, elixir-autogen, elixir-format
+msgid "Implementation Settings"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:125
+#, elixir-autogen, elixir-format
+msgid "Implementation name already exists"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:747
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Implementation:"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:259
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Implementations"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:309
+#, elixir-autogen, elixir-format
+msgid "Inactive Tokens"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:180
+#, elixir-autogen, elixir-format
+msgid "Invalid role selected."
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:165
+#, elixir-autogen, elixir-format
+msgid "Join our Discord server"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:180
+#, elixir-autogen, elixir-format
+msgid "Join us on Slack"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:47
+#, elixir-autogen, elixir-format
+msgid "Keep me logged in on this device"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:274
+#, elixir-autogen, elixir-format
+msgid "Last used"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:495
+#, elixir-autogen, elixir-format
+msgid "Leave blank for a non-expiring token."
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:50
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Log me in only this time"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:44
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:49
+#, elixir-autogen, elixir-format
+msgid "Logging in..."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:411
+#, elixir-autogen, elixir-format
+msgid "Make sure to copy your token now."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:210
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Manage API access tokens for this team"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Manage your account email address and password settings"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:230
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Member not found."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:107
+#, elixir-autogen, elixir-format
+msgid "Name cannot be empty"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:32
+#, elixir-autogen, elixir-format
+msgid "New password"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:330
+#, elixir-autogen, elixir-format
+msgid "No code references found for this requirement in the tracked branches."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:318
+#, elixir-autogen, elixir-format
+msgid "No inactive tokens."
+msgstr ""
+
+#: lib/acai_web/live/components/nav_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "No products found. Push a spec using the CLI to get started."
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:115
+#, elixir-autogen, elixir-format
+msgid "No requirement"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:420
+#, elixir-autogen, elixir-format
+msgid "No requirement selected"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:265
+#, elixir-autogen, elixir-format
+msgid "No states have been added for this implementation. The status has been inherited from"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:293
+#, elixir-autogen, elixir-format
+msgid "No tokens yet. Create one to get started."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:550
+#, elixir-autogen, elixir-format
+msgid "No trackable branches available."
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:222
+#, elixir-autogen, elixir-format
+msgid "Note"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:60
+#, elixir-autogen, elixir-format
+msgid "Peace of mind from prototype to production."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:615
+#, elixir-autogen, elixir-format
+msgid "Permanently delete the feature specification."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:695
+#, elixir-autogen, elixir-format
+msgid "Permanently delete this implementation and all associated data."
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:155
+#, elixir-autogen, elixir-format
+msgid "Permanently delete this team and all its data."
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:51
+#, elixir-autogen, elixir-format
+msgid "Phoenix Framework"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:268
+#: lib/acai_web/live/components/implementation_settings_live.ex:342
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Product"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:750
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Product:"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:325
+#, elixir-autogen, elixir-format
+msgid "References"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:478
+#, elixir-autogen, elixir-format
+msgid "References are inherited from a parent implementation."
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:144
+#: lib/acai_web/live/team_settings_live.ex:183
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Rename Team"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:638
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Repository:"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:407
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Requirement Details"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:105
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Requirement not available"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:523
+#: lib/acai_web/live/team_tokens_live.ex:560
+#, elixir-autogen, elixir-format
+msgid "Revoke Token"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:337
+#, elixir-autogen, elixir-format
+msgid "Revoked"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:352
+#, elixir-autogen, elixir-format
+msgid "Revoked on"
+msgstr ""
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:46
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Save Password"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:316
+#, elixir-autogen, elixir-format
+msgid "Save comment"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:552
+#, elixir-autogen, elixir-format
+msgid "Select a branch to track:"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:534
+#, elixir-autogen, elixir-format
+msgid "Select branches to clear references from:"
+msgstr ""
+
+#: lib/acai_web/controllers/page_html/home.html.heex:103
+#, elixir-autogen, elixir-format
+msgid "Source Code"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:260
+#, elixir-autogen, elixir-format
+msgid "Specs and requirements"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "States are inherited from a parent implementation."
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:137
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Team Name"
+msgstr ""
+
+#: lib/acai_web/live/components/nav_live.ex:197
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Team Settings"
+msgstr ""
+
+#: lib/acai_web/live/team_settings_live.ex:129
+#, elixir-autogen, elixir-format
+msgid "Team settings"
+msgstr ""
+
+#: lib/acai_web/live/components/requirement_details_live.ex:393
+#, elixir-autogen, elixir-format
+msgid "Test"
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:681
+#, elixir-autogen, elixir-format
+msgid "The feature specification will be permanently deleted."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:545
+#, elixir-autogen, elixir-format
+msgid "This action is immediate and cannot be undone. Any API clients using this token will lose access instantly."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:679
+#: lib/acai_web/live/components/implementation_settings_live.ex:759
+#: lib/acai_web/live/team_settings_live.ex:254
+#, elixir-autogen, elixir-format
+msgid "This action is permanent and cannot be undone."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:525
+#, elixir-autogen, elixir-format
+msgid "This is the current feature's branch and cannot be untracked"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:111
+#, elixir-autogen, elixir-format
+msgid "This person is already a member of the team."
+msgstr ""
+
+#: lib/acai_web/live/components/feature_settings_live.ex:422
+#, elixir-autogen, elixir-format
+msgid "This will clear all requirement states and comments for %{feature_name}."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:761
+#, elixir-autogen, elixir-format
+msgid "This will permanently delete all feature states (status & comments) applied to it, and they can't be recovered."
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:56
+#, elixir-autogen, elixir-format
+msgid "Tip: If you prefer passwords, you can enable them in the user settings."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:772
+#: lib/acai_web/live/team_settings_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "To confirm, type"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:392
+#, elixir-autogen, elixir-format
+msgid "Token Created"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:485
+#, elixir-autogen, elixir-format
+msgid "Token name"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:373
+#, elixir-autogen, elixir-format
+msgid "Token usage analytics will be available in a future release."
+msgstr ""
+
+#: lib/acai_web/live/components/nav_live.ex:203
+#: lib/acai_web/live/team_tokens_live.ex:245
+#, elixir-autogen, elixir-format
+msgid "Tokens"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:234
+#, elixir-autogen, elixir-format
+msgid "Tokens grant full read and write access to all team resources, except they can not be used to manage users or other access tokens."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:675
+#, elixir-autogen, elixir-format
+msgid "Untrack"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:623
+#, elixir-autogen, elixir-format, fuzzy
+msgid "Untrack Branch?"
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:526
+#, elixir-autogen, elixir-format
+msgid "Untrack branch"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:368
+#, elixir-autogen, elixir-format
+msgid "Usage"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Welcome"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:237
+#, elixir-autogen, elixir-format
+msgid "When a user is removed from the team, any tokens they created are revoked."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:652
+#, elixir-autogen, elixir-format
+msgid "You can re-track this branch later without losing any data."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "You cannot change your own role."
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:412
+#, elixir-autogen, elixir-format
+msgid "You won't be able to see it again."
+msgstr ""
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:773
+#: lib/acai_web/live/team_settings_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "below:"
+msgstr ""
+
+#: lib/acai_web/live/team_tokens_live.ex:486
+#, elixir-autogen, elixir-format
+msgid "e.g. Agentic CLI V1"
 msgstr ""

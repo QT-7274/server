@@ -83,7 +83,7 @@ defmodule AcaiWeb.Live.Components.FeatureStatusDropdown do
           phx-click={select_status_js(close_dropdown_js, trigger_id, @acid, nil)}
           phx-stop-propagation
         >
-          <span class="badge badge-sm badge-ghost text-base-content/50">No status</span>
+          <span class="badge badge-sm badge-ghost text-base-content/50">{gettext("No status")}</span>
         </button>
 
         <%= for status <- @valid_statuses do %>

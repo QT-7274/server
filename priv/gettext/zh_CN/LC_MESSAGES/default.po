@@ -24,6 +24,7 @@ msgstr "正在尝试重新连接"
 
 #: lib/acai_web/components/layouts.ex:130
 #: lib/acai_web/controllers/user_registration_html/new.html.heex:9
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:38
 #: lib/acai_web/controllers/user_session_html/new.html.heex:5
 #, elixir-autogen, elixir-format
 msgid "Log in"
@@ -78,6 +79,7 @@ msgid "%{pct}% covered"
 msgstr "已覆盖 %{pct}%"
 
 #: lib/acai_web/live/team_live.ex:391
+#: lib/acai_web/live/team_tokens_live.ex:209
 #, elixir-autogen, elixir-format
 msgid "Access Tokens"
 msgstr "访问令牌"
@@ -102,17 +104,34 @@ msgstr "已经注册？"
 msgid "Branch"
 msgstr "分支"
 
+#: lib/acai_web/live/components/feature_settings_live.ex:439
+#: lib/acai_web/live/components/feature_settings_live.ex:579
+#: lib/acai_web/live/components/feature_settings_live.ex:699
+#: lib/acai_web/live/components/implementation_settings_live.ex:592
+#: lib/acai_web/live/components/implementation_settings_live.ex:666
+#: lib/acai_web/live/components/implementation_settings_live.ex:797
 #: lib/acai_web/live/team_live.ex:491
 #: lib/acai_web/live/team_live.ex:557
 #: lib/acai_web/live/team_live.ex:624
+#: lib/acai_web/live/team_settings_live.ex:215
+#: lib/acai_web/live/team_tokens_live.ex:499
 #: lib/acai_web/live/teams_live.ex:233
 #, elixir-autogen, elixir-format
 msgid "Cancel"
 msgstr "取消"
 
+#: lib/acai_web/live/components/feature_settings_live.ex:411
+#: lib/acai_web/live/components/feature_settings_live.ex:527
+#: lib/acai_web/live/components/feature_settings_live.ex:662
+#: lib/acai_web/live/components/implementation_settings_live.ex:629
+#: lib/acai_web/live/components/implementation_settings_live.ex:738
 #: lib/acai_web/live/team_live.ex:454
 #: lib/acai_web/live/team_live.ex:522
 #: lib/acai_web/live/team_live.ex:587
+#: lib/acai_web/live/team_settings_live.ex:189
+#: lib/acai_web/live/team_settings_live.ex:244
+#: lib/acai_web/live/team_tokens_live.ex:399
+#: lib/acai_web/live/team_tokens_live.ex:529
 #: lib/acai_web/live/teams_live.ex:206
 #, elixir-autogen, elixir-format
 msgid "Close"
@@ -200,6 +219,7 @@ msgstr "正在编辑角色"
 #: lib/acai_web/controllers/user_registration_html/new.html.heex:20
 #: lib/acai_web/controllers/user_session_html/new.html.heex:35
 #: lib/acai_web/controllers/user_session_html/new.html.heex:53
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:15
 #, elixir-autogen, elixir-format
 msgid "Email"
 msgstr "邮箱"
@@ -219,6 +239,7 @@ msgstr "更新评论失败"
 msgid "Failed to update status"
 msgstr "更新状态失败"
 
+#: lib/acai_web/live/components/feature_settings_live.ex:282
 #: lib/acai_web/live/feature_live.ex:17
 #: lib/acai_web/live/product_live.ex:275
 #: lib/acai_web/live/product_live.ex:287
@@ -226,6 +247,7 @@ msgstr "更新状态失败"
 msgid "Feature"
 msgstr "功能"
 
+#: lib/acai_web/live/components/feature_settings_live.ex:249
 #: lib/acai_web/live/implementation_live.ex:1030
 #, elixir-autogen, elixir-format
 msgid "Feature Settings"
@@ -280,6 +302,7 @@ msgstr "未找到该实现"
 msgid "Implementations of this feature"
 msgstr "该功能的实现"
 
+#: lib/acai_web/live/components/requirement_details_live.ex:256
 #: lib/acai_web/live/implementation_live.ex:1271
 #: lib/acai_web/live/implementation_live.ex:1442
 #, elixir-autogen, elixir-format
@@ -322,6 +345,7 @@ msgstr "仅此次登录"
 msgid "Log in with email"
 msgstr "使用邮箱登录"
 
+#: lib/acai_web/live/team_settings_live.ex:209
 #: lib/acai_web/live/teams_live.ex:228
 #, elixir-autogen, elixir-format
 msgid "Lowercase letters, numbers, and hyphens only."
@@ -338,6 +362,7 @@ msgid "Manage your teams and create new ones."
 msgstr "管理你的团队并创建新团队。"
 
 #: lib/acai_web/live/team_live.ex:324
+#: lib/acai_web/live/team_settings_live.ex:261
 #, elixir-autogen, elixir-format
 msgid "Members"
 msgstr "成员"
@@ -377,6 +402,7 @@ msgstr "该功能没有找到任何实现"
 msgid "No spec has been pushed for this implementation. It has been inherited from"
 msgstr "该实现尚未推送任何 spec，已从以下继承"
 
+#: lib/acai_web/live/components/feature_status_dropdown.ex:86
 #: lib/acai_web/live/implementation_live.ex:1804
 #, elixir-autogen, elixir-format
 msgid "No status"
@@ -387,6 +413,7 @@ msgstr "无状态"
 msgid "No teams yet"
 msgstr "还没有团队"
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:497
 #: lib/acai_web/live/implementation_live.ex:1375
 #, elixir-autogen, elixir-format
 msgid "No tracked branches"
@@ -434,6 +461,7 @@ msgstr "可访问该团队的人员"
 msgid "Product not found"
 msgstr "未找到该产品"
 
+#: lib/acai_web/live/components/nav_live.ex:168
 #: lib/acai_web/live/team_live.ex:285
 #, elixir-autogen, elixir-format
 msgid "Products"
@@ -470,12 +498,14 @@ msgstr "移除团队成员"
 msgid "Repo"
 msgstr "仓库"
 
+#: lib/acai_web/live/components/requirement_details_live.ex:356
 #: lib/acai_web/live/implementation_live.ex:1323
 #: lib/acai_web/live/implementation_live.ex:1401
 #, elixir-autogen, elixir-format
 msgid "Repository URI"
 msgstr "仓库 URI"
 
+#: lib/acai_web/live/components/requirement_details_live.ex:212
 #: lib/acai_web/live/implementation_live.ex:1624
 #, elixir-autogen, elixir-format
 msgid "Requirement"
@@ -502,7 +532,10 @@ msgstr "撤销其对该团队的访问权限"
 msgid "Role"
 msgstr "角色"
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:455
+#: lib/acai_web/live/components/implementation_settings_live.ex:602
 #: lib/acai_web/live/team_live.ex:560
+#: lib/acai_web/live/team_settings_live.ex:218
 #, elixir-autogen, elixir-format
 msgid "Save"
 msgstr "保存"
@@ -517,6 +550,7 @@ msgstr "发送邀请"
 msgid "Sign up"
 msgstr "立即注册"
 
+#: lib/acai_web/live/components/requirement_details_live.ex:232
 #: lib/acai_web/live/implementation_live.ex:1063
 #: lib/acai_web/live/implementation_live.ex:1477
 #: lib/acai_web/live/implementation_live.ex:1612
@@ -534,6 +568,7 @@ msgstr "目标 Spec"
 msgid "Team Overview"
 msgstr "团队概览"
 
+#: lib/acai_web/live/team_settings_live.ex:205
 #: lib/acai_web/live/teams_live.ex:223
 #, elixir-autogen, elixir-format
 msgid "Team name"
@@ -575,6 +610,7 @@ msgstr "此操作将："
 msgid "To see sent emails, visit"
 msgstr "查看已发送邮件，请访问"
 
+#: lib/acai_web/live/components/implementation_settings_live.ex:471
 #: lib/acai_web/live/implementation_live.ex:1371
 #, elixir-autogen, elixir-format
 msgid "Tracked Branches"
@@ -661,6 +697,7 @@ msgstr "无"
 msgid "or"
 msgstr "或"
 
+#: lib/acai_web/live/components/requirement_details_live.ex:278
 #: lib/acai_web/live/implementation_live.ex:1291
 #: lib/acai_web/live/implementation_live.ex:1462
 #, elixir-autogen, elixir-format
@@ -696,3 +733,762 @@ msgstr "邮箱页面"
 #, elixir-autogen, elixir-format
 msgid "to your account now."
 msgstr "登录到你的账号。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:566
+#, elixir-autogen, elixir-format
+msgid "%{count} of %{total} branches selected"
+msgstr "%{total} 个分支中已选择 %{count} 个"
+
+#: lib/acai_web/live/team_tokens_live.ex:232
+#, elixir-autogen, elixir-format
+msgid "About Team Access Tokens"
+msgstr "关于团队访问令牌"
+
+#: lib/acai_web/live/team_settings_live.ex:262
+#, elixir-autogen, elixir-format
+msgid "Access tokens"
+msgstr "访问令牌"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Account Settings"
+msgstr "账号设置"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:482
+#, elixir-autogen, elixir-format
+msgid "Add"
+msgstr "添加"
+
+#: lib/acai_web/live/team_live.ex:114
+#, elixir-autogen, elixir-format
+msgid "An error occurred. Please try again."
+msgstr "发生错误，请重试。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:425
+#, elixir-autogen, elixir-format
+msgid "Any inherited states from parent implementations will remain."
+msgstr "从父级实现继承的状态将保留。"
+
+#: lib/acai_web/live/team_tokens_live.ex:537
+#, elixir-autogen, elixir-format
+msgid "Are you sure you want to revoke this token?"
+msgstr "确定要撤销此令牌吗？"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:641
+#, elixir-autogen, elixir-format
+msgid "Branch:"
+msgstr "分支："
+
+#: lib/acai_web/controllers/page_html/home.html.heex:63
+#, elixir-autogen, elixir-format
+msgid "Build rich, interactive web applications quickly, with less code and fewer moving parts. Join our growing community of developers using Phoenix to craft APIs, HTML5 apps and more, for fun or at scale."
+msgstr "使用 Phoenix 快速构建丰富的交互式 Web 应用，代码更少、组件更精简。加入日益壮大的开发者社区，用 Phoenix 打造 API、HTML5 应用及更多，不论趣味项目还是大规模部署。"
+
+#: lib/acai_web/live/team_live.ex:177
+#, elixir-autogen, elixir-format
+msgid "Cannot change role: this is the last owner."
+msgstr "无法更改角色：这是最后一位所有者。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:619
+#, elixir-autogen, elixir-format
+msgid "Cannot delete an inherited spec."
+msgstr "无法删除继承的 spec。"
+
+#: lib/acai_web/live/team_live.ex:227
+#, elixir-autogen, elixir-format
+msgid "Cannot remove the last owner of the team."
+msgstr "无法移除团队的最后一位所有者。"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:21
+#, elixir-autogen, elixir-format
+msgid "Change Email"
+msgstr "更改邮箱"
+
+#: lib/acai_web/live/team_settings_live.ex:139
+#, elixir-autogen, elixir-format
+msgid "Change the name of your team."
+msgstr "更改团队名称。"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:133
+#, elixir-autogen, elixir-format
+msgid "Changelog"
+msgstr "更新日志"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:21
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:45
+#, elixir-autogen, elixir-format
+msgid "Changing..."
+msgstr "更改中..."
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:764
+#, elixir-autogen, elixir-format
+msgid "Child implementations will be preserved, but lose any inherited states and references."
+msgstr "子级实现将被保留，但会失去所有继承的状态和引用。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:405
+#, elixir-autogen, elixir-format
+msgid "Clear All States?"
+msgstr "清除所有状态？"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:521
+#, elixir-autogen, elixir-format
+msgid "Clear Code References?"
+msgstr "清除代码引用？"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:492
+#, elixir-autogen, elixir-format
+msgid "Clear Refs"
+msgstr "清除引用"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:589
+#, elixir-autogen, elixir-format
+msgid "Clear Selected"
+msgstr "清除已选"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:384
+#, elixir-autogen, elixir-format
+msgid "Clear States"
+msgstr "清除状态"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:366
+#, elixir-autogen, elixir-format
+msgid "Clear all states (status and comments) that have been applied to ACIDs in this feature."
+msgstr "清除已应用于此功能中 ACID 的所有状态（状态和评论）。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:474
+#, elixir-autogen, elixir-format
+msgid "Clear code references that have been pushed from tracked branches."
+msgstr "清除已从跟踪分支推送的代码引用。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:257
+#: lib/acai_web/live/components/implementation_settings_live.ex:331
+#: lib/acai_web/live/components/requirement_details_live.ex:199
+#: lib/acai_web/live/components/requirement_details_live.ex:414
+#, elixir-autogen, elixir-format
+msgid "Close drawer"
+msgstr "关闭抽屉"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:468
+#, elixir-autogen, elixir-format
+msgid "Code References"
+msgstr "代码引用"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:649
+#, elixir-autogen, elixir-format
+msgid "Code references from this branch will no longer appear in the feature view."
+msgstr "此分支的代码引用将不再出现在功能视图中。"
+
+#: lib/acai_web/live/team_tokens_live.ex:371
+#, elixir-autogen, elixir-format
+msgid "Coming soon"
+msgstr "即将推出"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:295
+#, elixir-autogen, elixir-format
+msgid "Comment"
+msgstr "评论"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:448
+#, elixir-autogen, elixir-format
+msgid "Confirm Clear"
+msgstr "确认清除"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:24
+#, elixir-autogen, elixir-format
+msgid "Confirm and log in only this time"
+msgstr "确认并仅此次登录"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:21
+#, elixir-autogen, elixir-format
+msgid "Confirm and stay logged in"
+msgstr "确认并保持登录"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:40
+#, elixir-autogen, elixir-format
+msgid "Confirm new password"
+msgstr "确认新密码"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:18
+#, elixir-autogen, elixir-format
+msgid "Confirming..."
+msgstr "确认中..."
+
+#: lib/acai_web/live/team_tokens_live.ex:433
+#, elixir-autogen, elixir-format
+msgid "Copied!"
+msgstr "已复制！"
+
+#: lib/acai_web/live/team_tokens_live.ex:427
+#, elixir-autogen, elixir-format
+msgid "Copy token"
+msgstr "复制令牌"
+
+#: lib/acai_web/live/team_tokens_live.ex:392
+#, elixir-autogen, elixir-format
+msgid "Create Access Token"
+msgstr "创建访问令牌"
+
+#: lib/acai_web/live/team_tokens_live.ex:219
+#: lib/acai_web/live/team_tokens_live.ex:502
+#, elixir-autogen, elixir-format
+msgid "Create Token"
+msgstr "创建令牌"
+
+#: lib/acai_web/live/team_tokens_live.ex:265
+#: lib/acai_web/live/team_tokens_live.ex:347
+#, elixir-autogen, elixir-format
+msgid "Created by"
+msgstr "创建者"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:608
+#: lib/acai_web/live/components/implementation_settings_live.ex:688
+#, elixir-autogen, elixir-format
+msgid "Danger Zone"
+msgstr "危险区域"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:693
+#: lib/acai_web/live/components/implementation_settings_live.ex:708
+#: lib/acai_web/live/components/implementation_settings_live.ex:807
+#, elixir-autogen, elixir-format
+msgid "Delete Implementation"
+msgstr "删除实现"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:732
+#, elixir-autogen, elixir-format
+msgid "Delete Implementation?"
+msgstr "删除实现？"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:613
+#: lib/acai_web/live/components/feature_settings_live.ex:634
+#: lib/acai_web/live/components/feature_settings_live.ex:708
+#, elixir-autogen, elixir-format
+msgid "Delete Spec"
+msgstr "删除 Spec"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:656
+#, elixir-autogen, elixir-format
+msgid "Delete Spec?"
+msgstr "删除 Spec？"
+
+#: lib/acai_web/live/team_settings_live.ex:153
+#: lib/acai_web/live/team_settings_live.ex:164
+#: lib/acai_web/live/team_settings_live.ex:238
+#: lib/acai_web/live/team_settings_live.ex:297
+#, elixir-autogen, elixir-format
+msgid "Delete Team"
+msgstr "删除团队"
+
+#: lib/acai_web/live/team_settings_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "Deleting this team will cascade-delete all associated data, including:"
+msgstr "删除此团队将级联删除所有关联数据，包括："
+
+#: lib/acai_web/controllers/page_html/home.html.heex:195
+#, elixir-autogen, elixir-format
+msgid "Deploy your application"
+msgstr "部署你的应用"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:150
+#, elixir-autogen, elixir-format
+msgid "Discuss on the Elixir Forum"
+msgstr "在 Elixir 论坛讨论"
+
+#: lib/acai_web/live/team_tokens_live.ex:468
+#, elixir-autogen, elixir-format
+msgid "Done"
+msgstr "完成"
+
+#: lib/acai_web/live/team_tokens_live.ex:492
+#, elixir-autogen, elixir-format
+msgid "Expiration (optional)"
+msgstr "过期时间（可选）"
+
+#: lib/acai_web/live/team_tokens_live.ex:341
+#, elixir-autogen, elixir-format
+msgid "Expired"
+msgstr "已过期"
+
+#: lib/acai_web/live/team_tokens_live.ex:356
+#, elixir-autogen, elixir-format
+msgid "Expired on"
+msgstr "过期于"
+
+#: lib/acai_web/live/team_tokens_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Expires"
+msgstr "过期"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:115
+#, elixir-autogen, elixir-format
+msgid "Failed to clear states"
+msgstr "清除状态失败"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:275
+#, elixir-autogen, elixir-format
+msgid "Failed to delete implementation"
+msgstr "删除实现失败"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:204
+#, elixir-autogen, elixir-format
+msgid "Failed to delete spec"
+msgstr "删除 spec 失败"
+
+#: lib/acai_web/live/team_tokens_live.ex:190
+#, elixir-autogen, elixir-format
+msgid "Failed to revoke token. Please try again."
+msgstr "撤销令牌失败，请重试。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:186
+#, elixir-autogen, elixir-format
+msgid "Failed to track branch"
+msgstr "跟踪分支失败"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:236
+#, elixir-autogen, elixir-format
+msgid "Failed to untrack branch"
+msgstr "取消跟踪分支失败"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:360
+#, elixir-autogen, elixir-format
+msgid "Feature States"
+msgstr "功能状态"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:670
+#, elixir-autogen, elixir-format
+msgid "Feature:"
+msgstr "功能："
+
+#: lib/acai_web/controllers/page_html/home.html.heex:85
+#, elixir-autogen, elixir-format
+msgid "Guides & Docs"
+msgstr "指南与文档"
+
+#: lib/acai_web/live/components/nav_live.ex:161
+#, elixir-autogen, elixir-format
+msgid "Home"
+msgstr "首页"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:685
+#, elixir-autogen, elixir-format
+msgid "If a parent spec exists, its requirements will be used instead. If no parent spec exists, you will be redirected to the product page."
+msgstr "如果存在父级 spec，将使用其需求代替。如果不存在父级 spec，你将被重定向到产品页面。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:275
+#: lib/acai_web/live/components/implementation_settings_live.ex:349
+#, elixir-autogen, elixir-format
+msgid "Implementation"
+msgstr "实现"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:425
+#, elixir-autogen, elixir-format
+msgid "Implementation Name"
+msgstr "实现名称"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:323
+#, elixir-autogen, elixir-format
+msgid "Implementation Settings"
+msgstr "实现设置"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:125
+#, elixir-autogen, elixir-format
+msgid "Implementation name already exists"
+msgstr "实现名称已存在"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:747
+#, elixir-autogen, elixir-format
+msgid "Implementation:"
+msgstr "实现："
+
+#: lib/acai_web/live/team_settings_live.ex:259
+#, elixir-autogen, elixir-format
+msgid "Implementations"
+msgstr "实现"
+
+#: lib/acai_web/live/team_tokens_live.ex:309
+#, elixir-autogen, elixir-format
+msgid "Inactive Tokens"
+msgstr "非活跃令牌"
+
+#: lib/acai_web/live/team_live.ex:180
+#, elixir-autogen, elixir-format
+msgid "Invalid role selected."
+msgstr "选择了无效的角色。"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:165
+#, elixir-autogen, elixir-format
+msgid "Join our Discord server"
+msgstr "加入 Discord 服务器"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:180
+#, elixir-autogen, elixir-format
+msgid "Join us on Slack"
+msgstr "加入 Slack"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:47
+#, elixir-autogen, elixir-format
+msgid "Keep me logged in on this device"
+msgstr "在此设备上保持登录"
+
+#: lib/acai_web/live/team_tokens_live.ex:274
+#, elixir-autogen, elixir-format
+msgid "Last used"
+msgstr "上次使用"
+
+#: lib/acai_web/live/team_tokens_live.ex:495
+#, elixir-autogen, elixir-format
+msgid "Leave blank for a non-expiring token."
+msgstr "留空则创建永不过期的令牌。"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:50
+#, elixir-autogen, elixir-format
+msgid "Log me in only this time"
+msgstr "仅此次登录"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:44
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:49
+#, elixir-autogen, elixir-format
+msgid "Logging in..."
+msgstr "登录中..."
+
+#: lib/acai_web/live/team_tokens_live.ex:411
+#, elixir-autogen, elixir-format
+msgid "Make sure to copy your token now."
+msgstr "请务必现在复制令牌。"
+
+#: lib/acai_web/live/team_tokens_live.ex:210
+#, elixir-autogen, elixir-format
+msgid "Manage API access tokens for this team"
+msgstr "管理该团队的 API 访问令牌"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Manage your account email address and password settings"
+msgstr "管理账号邮箱地址和密码设置"
+
+#: lib/acai_web/live/team_live.ex:230
+#, elixir-autogen, elixir-format
+msgid "Member not found."
+msgstr "未找到该成员。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:107
+#, elixir-autogen, elixir-format
+msgid "Name cannot be empty"
+msgstr "名称不能为空"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:32
+#, elixir-autogen, elixir-format
+msgid "New password"
+msgstr "新密码"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:330
+#, elixir-autogen, elixir-format
+msgid "No code references found for this requirement in the tracked branches."
+msgstr "在跟踪分支中未找到此需求的代码引用。"
+
+#: lib/acai_web/live/team_tokens_live.ex:318
+#, elixir-autogen, elixir-format
+msgid "No inactive tokens."
+msgstr "没有非活跃令牌。"
+
+#: lib/acai_web/live/components/nav_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "No products found. Push a spec using the CLI to get started."
+msgstr "未找到产品。使用 CLI 推送 spec 以开始。"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:115
+#, elixir-autogen, elixir-format
+msgid "No requirement"
+msgstr "无需求"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:420
+#, elixir-autogen, elixir-format
+msgid "No requirement selected"
+msgstr "未选择需求"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:265
+#, elixir-autogen, elixir-format
+msgid "No states have been added for this implementation. The status has been inherited from"
+msgstr "该实现尚未添加任何状态。状态继承自"
+
+#: lib/acai_web/live/team_tokens_live.ex:293
+#, elixir-autogen, elixir-format
+msgid "No tokens yet. Create one to get started."
+msgstr "还没有令牌。创建一个以开始使用。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:550
+#, elixir-autogen, elixir-format
+msgid "No trackable branches available."
+msgstr "没有可跟踪的分支。"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:222
+#, elixir-autogen, elixir-format
+msgid "Note"
+msgstr "备注"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:60
+#, elixir-autogen, elixir-format
+msgid "Peace of mind from prototype to production."
+msgstr "从原型到生产，安心无忧。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:615
+#, elixir-autogen, elixir-format
+msgid "Permanently delete the feature specification."
+msgstr "永久删除功能规格。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:695
+#, elixir-autogen, elixir-format
+msgid "Permanently delete this implementation and all associated data."
+msgstr "永久删除此实现及所有关联数据。"
+
+#: lib/acai_web/live/team_settings_live.ex:155
+#, elixir-autogen, elixir-format
+msgid "Permanently delete this team and all its data."
+msgstr "永久删除此团队及其所有数据。"
+
+#: lib/acai_web/controllers/page_html/home.html.heex:51
+#, elixir-autogen, elixir-format
+msgid "Phoenix Framework"
+msgstr "Phoenix 框架"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:268
+#: lib/acai_web/live/components/implementation_settings_live.ex:342
+#, elixir-autogen, elixir-format
+msgid "Product"
+msgstr "产品"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:750
+#, elixir-autogen, elixir-format
+msgid "Product:"
+msgstr "产品："
+
+#: lib/acai_web/live/components/requirement_details_live.ex:325
+#, elixir-autogen, elixir-format
+msgid "References"
+msgstr "引用"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:478
+#, elixir-autogen, elixir-format
+msgid "References are inherited from a parent implementation."
+msgstr "引用继承自父级实现。"
+
+#: lib/acai_web/live/team_settings_live.ex:144
+#: lib/acai_web/live/team_settings_live.ex:183
+#, elixir-autogen, elixir-format
+msgid "Rename Team"
+msgstr "重命名团队"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:638
+#, elixir-autogen, elixir-format
+msgid "Repository:"
+msgstr "仓库："
+
+#: lib/acai_web/live/components/requirement_details_live.ex:407
+#, elixir-autogen, elixir-format
+msgid "Requirement Details"
+msgstr "需求详情"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:105
+#, elixir-autogen, elixir-format
+msgid "Requirement not available"
+msgstr "需求不可用"
+
+#: lib/acai_web/live/team_tokens_live.ex:523
+#: lib/acai_web/live/team_tokens_live.ex:560
+#, elixir-autogen, elixir-format
+msgid "Revoke Token"
+msgstr "撤销令牌"
+
+#: lib/acai_web/live/team_tokens_live.ex:337
+#, elixir-autogen, elixir-format
+msgid "Revoked"
+msgstr "已撤销"
+
+#: lib/acai_web/live/team_tokens_live.ex:352
+#, elixir-autogen, elixir-format
+msgid "Revoked on"
+msgstr "撤销于"
+
+#: lib/acai_web/controllers/user_settings_html/edit.html.heex:46
+#, elixir-autogen, elixir-format
+msgid "Save Password"
+msgstr "保存密码"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:316
+#, elixir-autogen, elixir-format
+msgid "Save comment"
+msgstr "保存评论"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:552
+#, elixir-autogen, elixir-format
+msgid "Select a branch to track:"
+msgstr "选择要跟踪的分支："
+
+#: lib/acai_web/live/components/feature_settings_live.ex:534
+#, elixir-autogen, elixir-format
+msgid "Select branches to clear references from:"
+msgstr "选择要从中清除引用的分支："
+
+#: lib/acai_web/controllers/page_html/home.html.heex:103
+#, elixir-autogen, elixir-format
+msgid "Source Code"
+msgstr "源代码"
+
+#: lib/acai_web/live/team_settings_live.ex:260
+#, elixir-autogen, elixir-format
+msgid "Specs and requirements"
+msgstr "Spec 和需求"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "States are inherited from a parent implementation."
+msgstr "状态继承自父级实现。"
+
+#: lib/acai_web/live/team_settings_live.ex:137
+#, elixir-autogen, elixir-format
+msgid "Team Name"
+msgstr "团队名称"
+
+#: lib/acai_web/live/components/nav_live.ex:197
+#, elixir-autogen, elixir-format
+msgid "Team Settings"
+msgstr "团队设置"
+
+#: lib/acai_web/live/team_settings_live.ex:129
+#, elixir-autogen, elixir-format
+msgid "Team settings"
+msgstr "团队设置"
+
+#: lib/acai_web/live/components/requirement_details_live.ex:393
+#, elixir-autogen, elixir-format
+msgid "Test"
+msgstr "测试"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:681
+#, elixir-autogen, elixir-format
+msgid "The feature specification will be permanently deleted."
+msgstr "功能规格将被永久删除。"
+
+#: lib/acai_web/live/team_tokens_live.ex:545
+#, elixir-autogen, elixir-format
+msgid "This action is immediate and cannot be undone. Any API clients using this token will lose access instantly."
+msgstr "此操作立即生效且无法撤销。使用此令牌的任何 API 客户端将立即失去访问权限。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:679
+#: lib/acai_web/live/components/implementation_settings_live.ex:759
+#: lib/acai_web/live/team_settings_live.ex:254
+#, elixir-autogen, elixir-format
+msgid "This action is permanent and cannot be undone."
+msgstr "此操作是永久性的，无法撤销。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:525
+#, elixir-autogen, elixir-format
+msgid "This is the current feature's branch and cannot be untracked"
+msgstr "这是当前功能的分支，无法取消跟踪"
+
+#: lib/acai_web/live/team_live.ex:111
+#, elixir-autogen, elixir-format
+msgid "This person is already a member of the team."
+msgstr "此人已是团队成员。"
+
+#: lib/acai_web/live/components/feature_settings_live.ex:422
+#, elixir-autogen, elixir-format
+msgid "This will clear all requirement states and comments for %{feature_name}."
+msgstr "这将清除 %{feature_name} 的所有需求状态和评论。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:761
+#, elixir-autogen, elixir-format
+msgid "This will permanently delete all feature states (status & comments) applied to it, and they can't be recovered."
+msgstr "这将永久删除应用于此的所有功能状态（状态和评论），且无法恢复。"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:56
+#, elixir-autogen, elixir-format
+msgid "Tip: If you prefer passwords, you can enable them in the user settings."
+msgstr "提示：如果你更喜欢使用密码，可以在用户设置中启用。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:772
+#: lib/acai_web/live/team_settings_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "To confirm, type"
+msgstr "输入以下内容以确认"
+
+#: lib/acai_web/live/team_tokens_live.ex:392
+#, elixir-autogen, elixir-format
+msgid "Token Created"
+msgstr "令牌已创建"
+
+#: lib/acai_web/live/team_tokens_live.ex:485
+#, elixir-autogen, elixir-format
+msgid "Token name"
+msgstr "令牌名称"
+
+#: lib/acai_web/live/team_tokens_live.ex:373
+#, elixir-autogen, elixir-format
+msgid "Token usage analytics will be available in a future release."
+msgstr "令牌使用分析将在未来版本中提供。"
+
+#: lib/acai_web/live/components/nav_live.ex:203
+#: lib/acai_web/live/team_tokens_live.ex:245
+#, elixir-autogen, elixir-format
+msgid "Tokens"
+msgstr "令牌"
+
+#: lib/acai_web/live/team_tokens_live.ex:234
+#, elixir-autogen, elixir-format
+msgid "Tokens grant full read and write access to all team resources, except they can not be used to manage users or other access tokens."
+msgstr "令牌授予对所有团队资源的完整读写权限，但不能用于管理用户或其他访问令牌。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:675
+#, elixir-autogen, elixir-format
+msgid "Untrack"
+msgstr "取消跟踪"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:623
+#, elixir-autogen, elixir-format
+msgid "Untrack Branch?"
+msgstr "取消跟踪分支？"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:526
+#, elixir-autogen, elixir-format
+msgid "Untrack branch"
+msgstr "取消跟踪分支"
+
+#: lib/acai_web/live/team_tokens_live.ex:368
+#, elixir-autogen, elixir-format
+msgid "Usage"
+msgstr "使用情况"
+
+#: lib/acai_web/controllers/user_session_html/confirm.html.heex:4
+#, elixir-autogen, elixir-format
+msgid "Welcome"
+msgstr "欢迎"
+
+#: lib/acai_web/live/team_tokens_live.ex:237
+#, elixir-autogen, elixir-format
+msgid "When a user is removed from the team, any tokens they created are revoked."
+msgstr "当用户被移出团队时，其创建的所有令牌将被撤销。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:652
+#, elixir-autogen, elixir-format
+msgid "You can re-track this branch later without losing any data."
+msgstr "你可以在稍后重新跟踪此分支，不会丢失任何数据。"
+
+#: lib/acai_web/live/team_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "You cannot change your own role."
+msgstr "你无法更改自己的角色。"
+
+#: lib/acai_web/live/team_tokens_live.ex:412
+#, elixir-autogen, elixir-format
+msgid "You won't be able to see it again."
+msgstr "你将无法再次查看它。"
+
+#: lib/acai_web/live/components/implementation_settings_live.ex:773
+#: lib/acai_web/live/team_settings_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "below:"
+msgstr "在下方："
+
+#: lib/acai_web/live/team_tokens_live.ex:486
+#, elixir-autogen, elixir-format
+msgid "e.g. Agentic CLI V1"
+msgstr "例如：Agentic CLI V1"

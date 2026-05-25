@@ -102,7 +102,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
   defp build_requirement_from_jsonb(acid, nil) do
     %{
       acid: acid,
-      requirement: "Requirement not available",
+      requirement: gettext("Requirement not available"),
       note: nil,
       is_deprecated: false,
       replaced_by: []
@@ -112,7 +112,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
   defp build_requirement_from_jsonb(acid, data) do
     %{
       acid: acid,
-      requirement: Map.get(data, "requirement", Map.get(data, "definition", "No requirement")),
+      requirement: Map.get(data, "requirement", Map.get(data, "definition", gettext("No requirement"))),
       note: Map.get(data, "note"),
       is_deprecated: Map.get(data, "is_deprecated", false),
       replaced_by: Map.get(data, "replaced_by", [])
@@ -196,7 +196,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               class="btn btn-ghost btn-sm btn-square"
               phx-click="close"
               phx-target={@myself}
-              aria-label="Close drawer"
+              aria-label={gettext("Close drawer")}
             >
               <.icon name="hero-x-mark" class="size-5" />
             </button>
@@ -209,7 +209,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               <%!-- requirement-details.DRAWER.2: Renders the full requirement text --%>
               <div class="space-y-2">
                 <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider text-xs">
-                  Requirement
+                  {gettext("Requirement")}
                 </h3>
                 <p class="text-base-content leading-relaxed">
                   {@requirement.requirement}
@@ -219,7 +219,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               <%!-- requirement-details.DRAWER.3: Renders the requirement note if one exists --%>
               <div :if={@requirement.note} class="space-y-2">
                 <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider text-xs">
-                  Note
+                  {gettext("Note")}
                 </h3>
                 <p class="text-base-content/80 text-sm">
                   {@requirement.note}
@@ -229,7 +229,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               <%!-- requirement-details.DRAWER.4: Status section --%>
               <div class="space-y-2">
                 <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider text-xs">
-                  Status
+                  {gettext("Status")}
                 </h3>
                 <div class="flex flex-wrap items-center gap-2">
                   <%!-- feature-impl-view.DRAWER.3-1, feature-impl-view.DRAWER.3-3: Reuse the table status dropdown UI and force drawer-safe downward placement --%>
@@ -253,7 +253,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
                       popovertarget={inherited_popover_id}
                       style="anchor-name:--drawer-inherited-anchor"
                     >
-                      <.icon name="hero-cloud-arrow-down" class="size-3.5" /> Inherited
+                      <.icon name="hero-cloud-arrow-down" class="size-3.5" /> {gettext("Inherited")}
                     </button>
                     <div
                       popover
@@ -262,7 +262,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
                       style="position-anchor:--drawer-inherited-anchor"
                     >
                       <p class="text-xs text-base-content/70" id="drawer-inherited-popover-content">
-                        No states have been added for this implementation. The status has been inherited from
+                        {gettext("No states have been added for this implementation. The status has been inherited from")}
                         <%= if @states_source_impl do %>
                           <span id="drawer-inherited-source-wrapper">
                             <.link
@@ -275,7 +275,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
                             </.link>
                           </span>
                         <% else %>
-                          parent implementation
+                          {gettext("parent implementation")}
                         <% end %>
                       </p>
                     </div>
@@ -292,7 +292,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               <%!-- feature-impl-view.DRAWER.3-4, feature-impl-view.DRAWER.3-5, feature-impl-view.DRAWER.3-6: Comment editor for the selected ACID --%>
               <div class="space-y-3 bg-base-200/50 p-4 rounded-lg border border-base-300">
                 <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider text-xs">
-                  Comment
+                  {gettext("Comment")}
                 </h3>
                 <.form
                   for={@comment_form}
@@ -313,7 +313,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
                       class="btn btn-primary btn-sm"
                       id={"drawer-comment-save-#{acid_dom_id(@acid)}"}
                     >
-                      Save comment
+                      {gettext("Save comment")}
                     </button>
                   </div>
                 </.form>
@@ -322,12 +322,12 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
               <%!-- requirement-details.DRAWER.5: References section --%>
               <div class="space-y-3">
                 <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-                  References
+                  {gettext("References")}
                 </h3>
 
                 <%= if map_size(@refs_by_branch) == 0 do %>
                   <p class="text-sm text-base-content/50">
-                    No code references found for this requirement in the tracked branches.
+                    {gettext("No code references found for this requirement in the tracked branches.")}
                   </p>
                 <% else %>
                   <%!-- feature-impl-view.DRAWER.4-note: Each ref is sourced from a specific branch --%>
@@ -353,7 +353,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
                         style={"position-anchor:--requirement-drawer-repo-anchor-#{branch.id}"}
                       >
                         <p class="text-xs uppercase tracking-wider text-base-content/50">
-                          Repository URI
+                          {gettext("Repository URI")}
                         </p>
                         <a
                           href={repo_http_url(branch.repo_uri)}
@@ -390,7 +390,7 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
 
                         <%!-- Test badge for test references --%>
                         <%= if ref["is_test"] do %>
-                          <span class="badge badge-info badge-xs">Test</span>
+                          <span class="badge badge-info badge-xs">{gettext("Test")}</span>
                         <% end %>
                       </li>
                     </ul>
@@ -404,20 +404,20 @@ defmodule AcaiWeb.Live.Components.RequirementDetailsLive do
           <%!-- Empty drawer when no requirement selected --%>
           <div class="flex items-center justify-between p-4 border-b border-base-300">
             <h2 id={"#{@id}-title"} class="text-lg font-semibold text-base-content">
-              Requirement Details
+              {gettext("Requirement Details")}
             </h2>
             <button
               type="button"
               class="btn btn-ghost btn-sm btn-square"
               phx-click="close"
               phx-target={@myself}
-              aria-label="Close drawer"
+              aria-label={gettext("Close drawer")}
             >
               <.icon name="hero-x-mark" class="size-5" />
             </button>
           </div>
           <div class="flex-1 flex items-center justify-center p-4">
-            <p class="text-base-content/50">No requirement selected</p>
+            <p class="text-base-content/50">{gettext("No requirement selected")}</p>
           </div>
         <% end %>
       </div>

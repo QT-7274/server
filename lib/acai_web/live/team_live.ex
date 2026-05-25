@@ -108,10 +108,10 @@ defmodule AcaiWeb.TeamLive do
 
       {:error, :already_member} ->
         # team-view.INVITE.3-1
-        {:noreply, assign(socket, :invite_error, "This person is already a member of the team.")}
+        {:noreply, assign(socket, :invite_error, gettext("This person is already a member of the team."))}
 
       {:error, _} ->
-        {:noreply, assign(socket, :invite_error, "An error occurred. Please try again.")}
+        {:noreply, assign(socket, :invite_error, gettext("An error occurred. Please try again."))}
     end
   end
 
@@ -171,13 +171,13 @@ defmodule AcaiWeb.TeamLive do
         {:noreply, socket}
 
       {:error, :self_demotion} ->
-        {:noreply, assign(socket, :edit_error, "You cannot change your own role.")}
+        {:noreply, assign(socket, :edit_error, gettext("You cannot change your own role."))}
 
       {:error, :last_owner} ->
-        {:noreply, assign(socket, :edit_error, "Cannot change role: this is the last owner.")}
+        {:noreply, assign(socket, :edit_error, gettext("Cannot change role: this is the last owner."))}
 
       {:error, _changeset} ->
-        {:noreply, assign(socket, :edit_error, "Invalid role selected.")}
+        {:noreply, assign(socket, :edit_error, gettext("Invalid role selected."))}
     end
   end
 
@@ -224,10 +224,10 @@ defmodule AcaiWeb.TeamLive do
 
       {:error, :last_owner} ->
         # team-view.DELETE_ROLE.4
-        {:noreply, assign(socket, :delete_error, "Cannot remove the last owner of the team.")}
+        {:noreply, assign(socket, :delete_error, gettext("Cannot remove the last owner of the team."))}
 
       {:error, :not_found} ->
-        {:noreply, assign(socket, :delete_error, "Member not found.")}
+        {:noreply, assign(socket, :delete_error, gettext("Member not found."))}
     end
   end
 

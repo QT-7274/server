@@ -158,20 +158,20 @@ defmodule AcaiWeb.Live.Components.NavLive do
         <.nav_item
           navigate={~p"/t/#{@team.name}"}
           icon="hero-home"
-          label="Home"
+          label={gettext("Home")}
           active={is_nil(@active_product) and is_nil(@active_feature)}
         />
 
         <%!-- nav.PANEL.3: PRODUCTS section header --%>
         <div class="pt-4 pb-2">
           <span class="text-xs font-semibold text-base-content/50 uppercase tracking-wider">
-            Products
+            {gettext("Products")}
           </span>
         </div>
 
         <%= if Enum.empty?(@products_data) do %>
           <div class="px-3 py-4 text-xs text-base-content/50 leading-relaxed">
-            No products found. Push a spec using the CLI to get started.
+            {gettext("No products found. Push a spec using the CLI to get started.")}
           </div>
         <% else %>
           <%!-- nav.PANEL.3-1: Each product as collapsible item --%>
@@ -194,13 +194,13 @@ defmodule AcaiWeb.Live.Components.NavLive do
         <.nav_item
           navigate={~p"/t/#{@team.name}/settings"}
           icon="hero-cog-6-tooth"
-          label="Team Settings"
+          label={gettext("Team Settings")}
           active={String.ends_with?(@current_path, "/settings")}
         />
         <.nav_item
           navigate={~p"/t/#{@team.name}/tokens"}
           icon="hero-key"
-          label="Tokens"
+          label={gettext("Tokens")}
           active={String.ends_with?(@current_path, "/tokens")}
         />
       </div>

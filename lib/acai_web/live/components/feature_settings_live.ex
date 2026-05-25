@@ -112,7 +112,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
          |> assign(:has_local_states, false)}
 
       {:error, _} ->
-        {:noreply, put_flash(socket, :error, "Failed to clear states")}
+        {:noreply, put_flash(socket, :error, gettext("Failed to clear states"))}
     end
   end
 
@@ -201,7 +201,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         {:noreply, assign(socket, :show_delete_spec_modal, false)}
 
       {:error, _} ->
-        {:noreply, put_flash(socket, :error, "Failed to delete spec")}
+        {:noreply, put_flash(socket, :error, gettext("Failed to delete spec"))}
     end
   end
 
@@ -246,7 +246,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
           <div class="flex items-center gap-3 shrink-0">
             <.icon name="hero-cube" class="size-6 text-primary" />
             <h2 id={"#{@id}-title"} class="text-lg font-semibold text-base-content">
-              Feature Settings
+              {gettext("Feature Settings")}
             </h2>
           </div>
           <button
@@ -254,7 +254,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             class="btn btn-ghost btn-sm btn-square"
             phx-click="close"
             phx-target={@myself}
-            aria-label="Close drawer"
+            aria-label={gettext("Close drawer")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -265,21 +265,21 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
           <%!-- Info Card --%>
           <div class="p-4 border-1 border-base-300 rounded-lg space-y-3">
             <div class="space-y-1">
-              <p class="text-xs text-base-content/70 uppercase tracking-wider">Product</p>
+              <p class="text-xs text-base-content/70 uppercase tracking-wider">{gettext("Product")}</p>
               <div class="flex items-center gap-2">
                 <.icon name="custom-boxes" class="size-4 text-accent" />
                 <span class="text-sm font-medium">{@product.name}</span>
               </div>
             </div>
             <div>
-              <p class="text-xs text-base-content/70 uppercase tracking-wider">Implementation</p>
+              <p class="text-xs text-base-content/70 uppercase tracking-wider">{gettext("Implementation")}</p>
               <div class="flex items-center gap-2">
                 <.icon name="hero-tag" class="size-4 text-secondary" />
                 <span class="text-sm font-medium">{@implementation.name}</span>
               </div>
             </div>
             <div>
-              <p class="text-xs text-base-content/70 uppercase tracking-wider">Feature</p>
+              <p class="text-xs text-base-content/70 uppercase tracking-wider">{gettext("Feature")}</p>
               <div class="flex items-center gap-2">
                 <.icon name="hero-cube" class="size-4 text-primary" />
                 <span class="text-sm font-medium">{@feature_name}</span>
@@ -357,17 +357,17 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
     ~H"""
     <div class="space-y-3">
       <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-        Feature States
+        {gettext("Feature States")}
       </h3>
 
       <div class="flex items-start justify-between gap-4">
         <div>
           <p class="text-sm text-base-content/80">
-            Clear all states (status and comments) that have been applied to ACIDs in this feature.
+            {gettext("Clear all states (status and comments) that have been applied to ACIDs in this feature.")}
           </p>
           <%= if @states_inherited do %>
             <p class="text-xs text-warning mt-1">
-              States are inherited from a parent implementation.
+              {gettext("States are inherited from a parent implementation.")}
             </p>
           <% end %>
         </div>
@@ -381,7 +381,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
           disabled={@disabled}
           id="clear-states-btn"
         >
-          <.icon name="hero-trash" class="size-4 mr-1" /> Clear States
+          <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Clear States")}
         </button>
       </div>
     </div>
@@ -402,13 +402,13 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         phx-target={@target}
       >
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold">Clear All States?</h3>
+          <h3 class="text-lg font-semibold">{gettext("Clear All States?")}</h3>
           <button
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
             phx-click="cancel_clear_states"
             phx-target={@target}
-            aria-label="Close"
+            aria-label={gettext("Close")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -419,10 +419,10 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
           <.icon name="hero-exclamation-triangle" class="size-5 shrink-0 text-alert" />
           <div>
             <p class="font-semibold">
-              This will clear all requirement states and comments for {@feature_name}.
+              {gettext("This will clear all requirement states and comments for %{feature_name}.", feature_name: @feature_name)}
             </p>
             <p class="mt-1 text-xs">
-              Any inherited states from parent implementations will remain.
+              {gettext("Any inherited states from parent implementations will remain.")}
             </p>
           </div>
         </div>
@@ -436,7 +436,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             phx-target={@target}
             id="cancel-clear-states-btn"
           >
-            Cancel
+            {gettext("Cancel")}
           </.button>
           <.button
             type="button"
@@ -445,7 +445,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             phx-target={@target}
             id="confirm-clear-states-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Confirm Clear
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Confirm Clear")}
           </.button>
         </div>
       </div>
@@ -465,17 +465,17 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
     ~H"""
     <div class="space-y-3">
       <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-        Code References
+        {gettext("Code References")}
       </h3>
 
       <div class="flex items-start justify-between gap-4">
         <div>
           <p class="text-sm text-base-content/80">
-            Clear code references that have been pushed from tracked branches.
+            {gettext("Clear code references that have been pushed from tracked branches.")}
           </p>
           <%= if @refs_inherited do %>
             <p class="text-xs text-warning mt-1">
-              References are inherited from a parent implementation.
+              {gettext("References are inherited from a parent implementation.")}
             </p>
           <% end %>
         </div>
@@ -489,7 +489,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
           disabled={@disabled}
           id="clear-refs-btn"
         >
-          <.icon name="hero-trash" class="size-4 mr-1" /> Clear Refs
+          <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Clear Refs")}
         </button>
       </div>
     </div>
@@ -518,20 +518,20 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         phx-target={@target}
       >
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold text-warning">Clear Code References?</h3>
+          <h3 class="text-lg font-semibold text-warning">{gettext("Clear Code References?")}</h3>
           <button
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
             phx-click="cancel_clear_refs"
             phx-target={@target}
-            aria-label="Close"
+            aria-label={gettext("Close")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
         </div>
 
         <p class="text-sm text-base-content/80">
-          Select branches to clear references from:
+          {gettext("Select branches to clear references from:")}
         </p>
 
         <%!-- feature-settings.CLEAR_REFS.4 --%>
@@ -563,7 +563,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         <%!-- feature-settings.CLEAR_REFS.4_2 --%>
         <%= if MapSet.size(@selected_branch_ids) < @all_selected_count do %>
           <p class="text-xs text-base-content/50">
-            {MapSet.size(@selected_branch_ids)} of {@all_selected_count} branches selected
+            {gettext("%{count} of %{total} branches selected", count: MapSet.size(@selected_branch_ids), total: @all_selected_count)}
           </p>
         <% end %>
 
@@ -576,7 +576,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             phx-target={@target}
             id="cancel-clear-refs-btn"
           >
-            Cancel
+            {gettext("Cancel")}
           </.button>
           <.button
             type="button"
@@ -586,7 +586,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             disabled={@clear_disabled}
             id="confirm-clear-refs-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Clear Selected
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Clear Selected")}
           </.button>
         </div>
       </div>
@@ -605,18 +605,18 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
     ~H"""
     <div class="space-y-3">
       <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-        Danger Zone
+        {gettext("Danger Zone")}
       </h3>
 
       <div class="p-4 border border-error/30 rounded-lg bg-error/5 space-y-4">
         <div class="w-full">
-          <p class="font-semibold text-error">Delete Spec</p>
+          <p class="font-semibold text-error">{gettext("Delete Spec")}</p>
           <p class="text-sm text-base-content/60">
-            Permanently delete the feature specification.
+            {gettext("Permanently delete the feature specification.")}
           </p>
           <%= if @spec_inherited do %>
             <p class="text-xs text-warning mt-1">
-              Cannot delete an inherited spec.
+              {gettext("Cannot delete an inherited spec.")}
             </p>
           <% end %>
         </div>
@@ -631,7 +631,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             disabled={@disabled}
             id="delete-spec-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Delete Spec
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Spec")}
           </button>
         </div>
       </div>
@@ -653,13 +653,13 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         phx-target={@target}
       >
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold text-error">Delete Spec?</h3>
+          <h3 class="text-lg font-semibold text-error">{gettext("Delete Spec?")}</h3>
           <button
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
             phx-click="cancel_delete_spec"
             phx-target={@target}
-            aria-label="Close"
+            aria-label={gettext("Close")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -667,7 +667,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
 
         <div class="space-y-1">
           <p class="text-sm text-base-content/80">
-            <span class="font-medium">Feature:</span> {@feature_name}
+            <span class="font-medium">{gettext("Feature:")}</span> {@feature_name}
           </p>
         </div>
 
@@ -676,14 +676,13 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
         <div class="alert text-sm">
           <.icon name="hero-exclamation-triangle" class="size-5 shrink-0 text-alert" />
           <div>
-            <p class="font-semibold">This action is permanent and cannot be undone.</p>
+            <p class="font-semibold">{gettext("This action is permanent and cannot be undone.")}</p>
             <p class="mt-1">
-              The feature specification will be permanently deleted.
+              {gettext("The feature specification will be permanently deleted.")}
             </p>
             <%!-- feature-settings.DELETE_SPEC.4_2 --%>
             <p class="mt-2 text-xs">
-              If a parent spec exists, its requirements will be used instead.
-              If no parent spec exists, you will be redirected to the product page.
+              {gettext("If a parent spec exists, its requirements will be used instead. If no parent spec exists, you will be redirected to the product page.")}
             </p>
           </div>
         </div>
@@ -697,7 +696,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             phx-target={@target}
             id="cancel-delete-spec-btn"
           >
-            Cancel
+            {gettext("Cancel")}
           </.button>
           <.button
             type="button"
@@ -706,7 +705,7 @@ defmodule AcaiWeb.Live.Components.FeatureSettingsLive do
             phx-target={@target}
             id="confirm-delete-spec-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Delete Spec
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Spec")}
           </.button>
         </div>
       </div>

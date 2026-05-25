@@ -126,7 +126,7 @@ defmodule AcaiWeb.TeamSettingsLive do
         <%!-- team-settings.MAIN.1 --%>
         <.header>
           {@team.name}
-          <:subtitle>Team settings</:subtitle>
+          <:subtitle>{gettext("Team settings")}</:subtitle>
         </.header>
 
         <div class="card bg-base-100 border border-base-300 shadow-sm">
@@ -134,14 +134,14 @@ defmodule AcaiWeb.TeamSettingsLive do
             <%!-- Rename section --%>
             <div class="flex items-center justify-between gap-4">
               <div>
-                <h3 class="font-semibold">Team Name</h3>
+                <h3 class="font-semibold">{gettext("Team Name")}</h3>
                 <p class="text-sm text-base-content/60">
-                  Change the name of your team.
+                  {gettext("Change the name of your team.")}
                 </p>
               </div>
               <%!-- team-settings.MAIN.2 --%>
               <.button id="rename-team-btn" phx-click="open_rename_modal">
-                <.icon name="hero-pencil-square" class="size-4 mr-1" /> Rename Team
+                <.icon name="hero-pencil-square" class="size-4 mr-1" /> {gettext("Rename Team")}
               </.button>
             </div>
 
@@ -150,9 +150,9 @@ defmodule AcaiWeb.TeamSettingsLive do
             <%!-- Delete section --%>
             <div class="flex items-center justify-between gap-4">
               <div>
-                <h3 class="font-semibold text-error">Delete Team</h3>
+                <h3 class="font-semibold text-error">{gettext("Delete Team")}</h3>
                 <p class="text-sm text-base-content/60">
-                  Permanently delete this team and all its data.
+                  {gettext("Permanently delete this team and all its data.")}
                 </p>
               </div>
               <%!-- team-settings.MAIN.3 --%>
@@ -161,7 +161,7 @@ defmodule AcaiWeb.TeamSettingsLive do
                 phx-click="open_delete_modal"
                 class="btn btn-error btn-sm"
               >
-                <.icon name="hero-trash" class="size-4 mr-1" /> Delete Team
+                <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Team")}
               </.button>
             </div>
           </div>
@@ -180,13 +180,13 @@ defmodule AcaiWeb.TeamSettingsLive do
             phx-click-away="close_rename_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Rename Team</h3>
+              <h3 class="text-lg font-semibold">{gettext("Rename Team")}</h3>
               <button
                 id="close-rename-modal-btn"
                 type="button"
                 phx-click="close_rename_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -202,20 +202,20 @@ defmodule AcaiWeb.TeamSettingsLive do
               <.input
                 field={@rename_form[:name]}
                 type="text"
-                label="Team name"
+                label={gettext("Team name")}
                 autocomplete="off"
               />
               <p class="text-xs text-base-content/50 -mt-2">
-                Lowercase letters, numbers, and hyphens only.
+                {gettext("Lowercase letters, numbers, and hyphens only.")}
               </p>
 
               <%!-- team-settings.RENAME.2 --%>
               <div class="flex gap-3 justify-end pt-1">
                 <.button type="button" phx-click="close_rename_modal" id="cancel-rename-btn">
-                  Cancel
+                  {gettext("Cancel")}
                 </.button>
                 <.button type="submit" variant="primary" id="save-rename-btn">
-                  Save
+                  {gettext("Save")}
                 </.button>
               </div>
             </.form>
@@ -235,13 +235,13 @@ defmodule AcaiWeb.TeamSettingsLive do
             phx-click-away="close_delete_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold text-error">Delete Team</h3>
+              <h3 class="text-lg font-semibold text-error">{gettext("Delete Team")}</h3>
               <button
                 id="close-delete-modal-btn"
                 type="button"
                 phx-click="close_delete_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -251,15 +251,15 @@ defmodule AcaiWeb.TeamSettingsLive do
             <div class="alert alert-error text-sm">
               <.icon name="hero-exclamation-triangle" class="size-5 shrink-0" />
               <div>
-                <p class="font-semibold">This action is permanent and cannot be undone.</p>
+                <p class="font-semibold">{gettext("This action is permanent and cannot be undone.")}</p>
                 <p class="mt-1">
-                  Deleting this team will cascade-delete all associated data, including:
+                  {gettext("Deleting this team will cascade-delete all associated data, including:")}
                 </p>
                 <ul class="list-disc list-inside mt-1 space-y-0.5">
-                  <li>Implementations</li>
-                  <li>Specs and requirements</li>
-                  <li>Members</li>
-                  <li>Access tokens</li>
+                  <li>{gettext("Implementations")}</li>
+                  <li>{gettext("Specs and requirements")}</li>
+                  <li>{gettext("Members")}</li>
+                  <li>{gettext("Access tokens")}</li>
                 </ul>
               </div>
             </div>
@@ -267,7 +267,7 @@ defmodule AcaiWeb.TeamSettingsLive do
             <%!-- team-settings.DELETE.2 --%>
             <div class="space-y-2">
               <p class="text-sm">
-                To confirm, type <span class="font-mono font-semibold">{@team.name}</span> below:
+                {gettext("To confirm, type")} <span class="font-mono font-semibold">{@team.name}</span> {gettext("below:")}
               </p>
               <form phx-change="update_confirm_name">
                 <input
@@ -294,7 +294,7 @@ defmodule AcaiWeb.TeamSettingsLive do
                 class="btn btn-error"
                 disabled={@confirm_name != @team.name}
               >
-                <.icon name="hero-trash" class="size-4 mr-1" /> Delete Team
+                <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Team")}
               </.button>
             </div>
           </div>

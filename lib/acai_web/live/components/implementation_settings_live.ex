@@ -104,7 +104,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
 
     # impl-settings.RENAME.5: Save button is disabled when input is empty or whitespace-only
     if new_name == "" do
-      {:noreply, assign(socket, rename_error: "Name cannot be empty")}
+      {:noreply, assign(socket, rename_error: gettext("Name cannot be empty"))}
     else
       # Check uniqueness
       if Implementations.implementation_name_unique?(implementation, new_name) do
@@ -122,7 +122,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
 
           {:error, _changeset} ->
             # impl-settings.RENAME.7_1: On validation failure, displays error message "Implementation name already exists"
-            {:noreply, assign(socket, rename_error: "Implementation name already exists")}
+            {:noreply, assign(socket, rename_error: gettext("Implementation name already exists"))}
         end
       else
         {:noreply, assign(socket, rename_error: "Implementation name already exists")}
@@ -183,7 +183,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
              |> assign(:selected_branch_id, nil)}
 
           {:error, _changeset} ->
-            {:noreply, put_flash(socket, :error, "Failed to track branch")}
+            {:noreply, put_flash(socket, :error, gettext("Failed to track branch"))}
         end
       else
         {:noreply, socket}
@@ -233,7 +233,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
            |> assign(:branch_to_untrack, nil)}
 
         {:error, _changeset} ->
-          {:noreply, put_flash(socket, :error, "Failed to untrack branch")}
+          {:noreply, put_flash(socket, :error, gettext("Failed to untrack branch"))}
       end
     else
       {:noreply, socket}
@@ -272,7 +272,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
           {:noreply, socket}
 
         {:error, _changeset} ->
-          {:noreply, put_flash(socket, :error, "Failed to delete implementation")}
+          {:noreply, put_flash(socket, :error, gettext("Failed to delete implementation"))}
       end
     else
       {:noreply, socket}
@@ -320,7 +320,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
           <div class="flex items-center gap-3">
             <.icon name="hero-tag" class="size-6 text-secondary" />
             <h2 id={"#{@id}-title"} class="text-lg font-semibold text-base-content">
-              Implementation Settings
+              {gettext("Implementation Settings")}
             </h2>
           </div>
           <button
@@ -328,7 +328,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             class="btn btn-ghost btn-sm btn-square"
             phx-click="close"
             phx-target={@myself}
-            aria-label="Close drawer"
+            aria-label={gettext("Close drawer")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -339,14 +339,14 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
           <%!-- Info Card --%>
           <div class="p-4 bg-base-100 border-1 border-base-300 rounded-lg space-y-3">
             <div class="space-y-1">
-              <p class="text-xs text-base-content/70 uppercase tracking-wider">Product</p>
+              <p class="text-xs text-base-content/70 uppercase tracking-wider">{gettext("Product")}</p>
               <div class="flex items-center gap-2">
                 <.icon name="custom-boxes" class="size-4 text-accent" />
                 <span class="text-sm font-medium">{@product.name}</span>
               </div>
             </div>
             <div class="space-y-1">
-              <p class="text-xs text-base-content/70 uppercase tracking-wider">Implementation</p>
+              <p class="text-xs text-base-content/70 uppercase tracking-wider">{gettext("Implementation")}</p>
               <div class="flex items-center gap-2">
                 <.icon name="hero-tag" class="size-4 text-secondary" />
                 <span class="text-sm font-medium">{@implementation.name}</span>
@@ -422,7 +422,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
     ~H"""
     <div class="space-y-3">
       <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-        Implementation Name
+        {gettext("Implementation Name")}
       </h3>
 
       <.form
@@ -452,7 +452,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             id="save-rename-btn"
             disabled={@save_disabled}
           >
-            Save
+            {gettext("Save")}
           </.button>
         </div>
       </.form>
@@ -468,7 +468,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
     <div class="space-y-3">
       <div class="flex items-center justify-between">
         <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-          Tracked Branches
+          {gettext("Tracked Branches")}
         </h3>
         <%!-- Show Add button when not in track UI mode --%>
         <%= if !@show_track_branch_ui do %>
@@ -479,7 +479,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             phx-target={@target}
             id="show-track-branch-btn"
           >
-            <.icon name="hero-plus" class="size-4 mr-1" /> Add
+            <.icon name="hero-plus" class="size-4 mr-1" /> {gettext("Add")}
           </button>
         <% end %>
       </div>
@@ -494,7 +494,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
       <% else %>
         <%!-- Tracked Branches List --%>
         <%= if @tracked_branches == [] do %>
-          <p class="text-sm text-base-content/50">No tracked branches</p>
+          <p class="text-sm text-base-content/50">{gettext("No tracked branches")}</p>
         <% else %>
           <div class="space-y-2">
             <%!-- impl-settings.UNTRACK_BRANCH.1: Renders a list of all currently tracked branches --%>
@@ -522,8 +522,8 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
                 disabled={is_current_spec_branch}
                 title={
                   if is_current_spec_branch,
-                    do: "This is the current feature's branch and cannot be untracked",
-                    else: "Untrack branch"
+                    do: gettext("This is the current feature's branch and cannot be untracked"),
+                    else: gettext("Untrack branch")
                 }
                 id={"untrack-branch-btn-#{tracked_branch.branch_id}"}
               >
@@ -547,9 +547,9 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
     ~H"""
     <div class="space-y-3 p-3 bg-base-200 rounded-lg">
       <%= if @trackable_branches == [] do %>
-        <p class="text-sm text-base-content/60">No trackable branches available.</p>
+        <p class="text-sm text-base-content/60">{gettext("No trackable branches available.")}</p>
       <% else %>
-        <p class="text-sm text-base-content/70">Select a branch to track:</p>
+        <p class="text-sm text-base-content/70">{gettext("Select a branch to track:")}</p>
 
         <%!-- impl-settings.TRACK_BRANCH.1: Renders a dropdown or list of trackable branches --%>
         <div class="space-y-1 max-h-48 overflow-y-auto">
@@ -589,7 +589,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
           phx-target={@target}
           id="cancel-track-branch-btn"
         >
-          Cancel
+          {gettext("Cancel")}
         </.button>
         <.button
           type="button"
@@ -599,7 +599,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
           disabled={@save_disabled}
           id="save-track-branch-btn"
         >
-          Save
+          {gettext("Save")}
         </.button>
       </div>
     </div>
@@ -620,13 +620,13 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         phx-target={@target}
       >
         <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold">Untrack Branch?</h3>
+          <h3 class="text-lg font-semibold">{gettext("Untrack Branch?")}</h3>
           <button
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
             phx-click="cancel_untrack"
             phx-target={@target}
-            aria-label="Close"
+            aria-label={gettext("Close")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -635,10 +635,10 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         <%!-- impl-settings.UNTRACK_BRANCH.6_1: Confirmation modal displays the branch name and repo_uri --%>
         <div class="space-y-2">
           <p class="text-sm text-base-content/80">
-            <span class="font-medium">Repository:</span> {@branch_to_untrack.branch.repo_uri}
+            <span class="font-medium">{gettext("Repository:")}</span> {@branch_to_untrack.branch.repo_uri}
           </p>
           <p class="text-sm text-base-content/80">
-            <span class="font-medium">Branch:</span> {@branch_to_untrack.branch.branch_name}
+            <span class="font-medium">{gettext("Branch:")}</span> {@branch_to_untrack.branch.branch_name}
           </p>
         </div>
 
@@ -646,10 +646,10 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         <div class="alert alert-warning text-sm">
           <.icon name="hero-exclamation-triangle" class="size-5 shrink-0" />
           <div>
-            <p>Code references from this branch will no longer appear in the feature view.</p>
+            <p>{gettext("Code references from this branch will no longer appear in the feature view.")}</p>
             <%!-- impl-settings.UNTRACK_BRANCH.9: User can re-track the branch later without data loss --%>
             <p class="mt-1 text-xs">
-              You can re-track this branch later without losing any data.
+              {gettext("You can re-track this branch later without losing any data.")}
             </p>
           </div>
         </div>
@@ -663,7 +663,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             id="cancel-untrack-btn"
             class="btn btn-soft"
           >
-            Cancel
+            {gettext("Cancel")}
           </.button>
           <.button
             type="button"
@@ -672,7 +672,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             phx-target={@target}
             id="confirm-untrack-btn"
           >
-            Untrack
+            {gettext("Untrack")}
           </.button>
         </div>
       </div>
@@ -685,14 +685,14 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
     ~H"""
     <div class="space-y-3">
       <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-        Danger Zone
+        {gettext("Danger Zone")}
       </h3>
 
       <div class="p-4 border border-error/30 rounded-lg bg-error/5 space-y-4">
         <div class="w-full">
-          <p class="font-semibold text-error">Delete Implementation</p>
+          <p class="font-semibold text-error">{gettext("Delete Implementation")}</p>
           <p class="text-sm text-base-content/60">
-            Permanently delete this implementation and all associated data.
+            {gettext("Permanently delete this implementation and all associated data.")}
           </p>
         </div>
         <%!-- impl-settings.DELETE.1: Renders a Delete Implementation button with warning styling --%>
@@ -705,7 +705,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             phx-target={@target}
             id="delete-implementation-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Delete Implementation
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Implementation")}
           </.button>
         </div>
       </div>
@@ -729,13 +729,13 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
       <div class="relative z-[70] w-full max-w-md mx-4 bg-base-100 rounded-2xl shadow-xl p-6 space-y-5">
         <div class="flex items-center justify-between">
           <%!-- impl-settings.DELETE.4_2: Modal displays warning text that deletion is irreversible --%>
-          <h3 class="text-lg font-semibold text-error">Delete Implementation?</h3>
+          <h3 class="text-lg font-semibold text-error">{gettext("Delete Implementation?")}</h3>
           <button
             type="button"
             class="btn btn-ghost btn-sm btn-circle"
             phx-click="cancel_delete"
             phx-target={@target}
-            aria-label="Close"
+            aria-label={gettext("Close")}
           >
             <.icon name="hero-x-mark" class="size-5" />
           </button>
@@ -744,10 +744,10 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         <%!-- impl-settings.DELETE.4_1: Modal displays the implementation name and product name --%>
         <div class="space-y-1">
           <p class="text-sm text-base-content/80">
-            <span class="font-medium">Implementation:</span> {@implementation.name}
+            <span class="font-medium">{gettext("Implementation:")}</span> {@implementation.name}
           </p>
           <p class="text-sm text-base-content/80">
-            <span class="font-medium">Product:</span> {@product.name}
+            <span class="font-medium">{gettext("Product:")}</span> {@product.name}
           </p>
         </div>
 
@@ -756,12 +756,12 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         <div class="alert alert-soft text-sm">
           <.icon name="hero-exclamation-triangle" class="size-5 shrink-0 text-alert" />
           <div>
-            <p class="font-semibold">This action is permanent and cannot be undone.</p>
+            <p class="font-semibold">{gettext("This action is permanent and cannot be undone.")}</p>
             <p class="mt-1">
-              This will permanently delete all feature states (status & comments) applied to it, and they can't be recovered.
+              {gettext("This will permanently delete all feature states (status & comments) applied to it, and they can't be recovered.")}
             </p>
             <p class="mt-2">
-              Child implementations will be preserved, but lose any inherited states and references.
+              {gettext("Child implementations will be preserved, but lose any inherited states and references.")}
             </p>
           </div>
         </div>
@@ -769,8 +769,8 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
         <%!-- impl-settings.DELETE.5: Delete button in modal requires additional confirmation (e.g. type name) --%>
         <div class="space-y-2">
           <p class="text-sm">
-            To confirm, type <span class="font-mono font-semibold">{@implementation.name}</span>
-            below:
+            {gettext("To confirm, type")} <span class="font-mono font-semibold">{@implementation.name}</span>
+            {gettext("below:")}
           </p>
           <form id="delete-confirm-form" phx-change="update_delete_confirm_name" phx-target={@target}>
             <input
@@ -794,7 +794,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             phx-target={@target}
             id="cancel-delete-btn"
           >
-            Cancel
+            {gettext("Cancel")}
           </.button>
           <.button
             type="button"
@@ -804,7 +804,7 @@ defmodule AcaiWeb.Live.Components.ImplementationSettingsLive do
             disabled={!@confirm_match}
             id="confirm-delete-btn"
           >
-            <.icon name="hero-trash" class="size-4 mr-1" /> Delete Implementation
+            <.icon name="hero-trash" class="size-4 mr-1" /> {gettext("Delete Implementation")}
           </.button>
         </div>
       </div>

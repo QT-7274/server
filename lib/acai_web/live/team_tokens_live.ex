@@ -187,7 +187,7 @@ defmodule AcaiWeb.TeamTokensLive do
         {:noreply, socket}
 
       {:error, _} ->
-        {:noreply, put_flash(socket, :error, "Failed to revoke token. Please try again.")}
+        {:noreply, put_flash(socket, :error, gettext("Failed to revoke token. Please try again."))}
     end
   end
 
@@ -206,8 +206,8 @@ defmodule AcaiWeb.TeamTokensLive do
     >
       <div class="space-y-6 lg:space-y-8">
         <.header>
-          {@team.name} — Access Tokens
-          <:subtitle>Manage API access tokens for this team</:subtitle>
+          {@team.name} — {gettext("Access Tokens")}
+          <:subtitle>{gettext("Manage API access tokens for this team")}</:subtitle>
           <:actions>
             <%!-- team-tokens.TATSEC.4 --%>
             <.button
@@ -216,7 +216,7 @@ defmodule AcaiWeb.TeamTokensLive do
               variant="primary"
               disabled={not @can_manage_tokens?}
             >
-              <.icon name="hero-plus" class="size-4 mr-1" /> Create Token
+              <.icon name="hero-plus" class="size-4 mr-1" /> {gettext("Create Token")}
             </.button>
           </:actions>
         </.header>
@@ -229,12 +229,12 @@ defmodule AcaiWeb.TeamTokensLive do
           <div class="flex gap-3">
             <.icon name="hero-information-circle" class="size-5 shrink-0 text-warning mt-0.5" />
             <div class="space-y-1">
-              <p class="font-semibold text-warning">About Team Access Tokens</p>
+              <p class="font-semibold text-warning">{gettext("About Team Access Tokens")}</p>
               <p class="text-base-content/70">
-                Tokens grant full read and write access to all team resources, except they can not be used to manage users or other access tokens.
+                {gettext("Tokens grant full read and write access to all team resources, except they can not be used to manage users or other access tokens.")}
               </p>
               <p class="text-base-content/70">
-                When a user is removed from the team, any tokens they created are revoked.
+                {gettext("When a user is removed from the team, any tokens they created are revoked.")}
               </p>
             </div>
           </div>
@@ -242,7 +242,7 @@ defmodule AcaiWeb.TeamTokensLive do
 
         <%!-- team-tokens.MAIN.1 --%>
         <div class="space-y-4">
-          <h2 class="text-base font-semibold">Tokens</h2>
+          <h2 class="text-base font-semibold">{gettext("Tokens")}</h2>
 
           <div id="tokens-list" phx-update="stream" class="space-y-2">
             <div
@@ -262,16 +262,16 @@ defmodule AcaiWeb.TeamTokensLive do
                 </div>
                 <div class="text-xs text-base-content/50 flex flex-wrap gap-x-3 gap-y-0.5">
                   <span>
-                    Created by {token.user && token.user.email}
+                    {gettext("Created by")} {token.user && token.user.email}
                   </span>
                   <span>
                     {Calendar.strftime(token.inserted_at, "%b %d, %Y")}
                   </span>
                   <%= if not is_nil(token.expires_at) do %>
-                    <span>Expires {Calendar.strftime(token.expires_at, "%b %d, %Y")}</span>
+                    <span>{gettext("Expires")} {Calendar.strftime(token.expires_at, "%b %d, %Y")}</span>
                   <% end %>
                   <%= if not is_nil(token.last_used_at) do %>
-                    <span>Last used {Calendar.strftime(token.last_used_at, "%b %d, %Y")}</span>
+                    <span>{gettext("Last used")} {Calendar.strftime(token.last_used_at, "%b %d, %Y")}</span>
                   <% end %>
                 </div>
               </div>
@@ -290,7 +290,7 @@ defmodule AcaiWeb.TeamTokensLive do
           </div>
           <%= if @tokens_empty? do %>
             <div id="tokens-empty-state" class="text-sm text-base-content/50 py-4 text-center">
-              No tokens yet. Create one to get started.
+              {gettext("No tokens yet. Create one to get started.")}
             </div>
           <% end %>
         </div>
@@ -306,7 +306,7 @@ defmodule AcaiWeb.TeamTokensLive do
             <.icon
               name={if @inactive_expanded, do: "hero-chevron-down", else: "hero-chevron-right"}
               class="size-4"
-            /> Inactive Tokens
+            /> {gettext("Inactive Tokens")}
           </button>
 
           <div id="inactive-tokens-container" class={if not @inactive_expanded, do: "hidden"}>
@@ -315,7 +315,7 @@ defmodule AcaiWeb.TeamTokensLive do
                 id="inactive-tokens-empty-state"
                 class="hidden only:block text-xs text-base-content/30 py-2 italic"
               >
-                No inactive tokens.
+                {gettext("No inactive tokens.")}
               </div>
               <div
                 :for={{id, token} <- @streams.inactive_tokens}
@@ -334,26 +334,26 @@ defmodule AcaiWeb.TeamTokensLive do
                     <%!-- team-tokens.INACTIVE.2 --%>
                     <%= if not is_nil(token.revoked_at) do %>
                       <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-base-content/40 bg-base-300 px-2 py-0.5 rounded-full">
-                        Revoked
+                        {gettext("Revoked")}
                       </span>
                     <% else %>
                       <span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-warning/70 bg-warning/10 px-2 py-0.5 rounded-full">
-                        Expired
+                        {gettext("Expired")}
                       </span>
                     <% end %>
                   </div>
                   <div class="text-[11px] text-base-content/40 flex flex-wrap gap-x-3 gap-y-0.5">
                     <span>
-                      Created by {token.user && token.user.email}
+                      {gettext("Created by")} {token.user && token.user.email}
                     </span>
                     <%!-- team-tokens.INACTIVE.2 --%>
                     <%= if not is_nil(token.revoked_at) do %>
                       <span>
-                        Revoked on {Calendar.strftime(token.revoked_at, "%b %d, %Y")}
+                        {gettext("Revoked on")} {Calendar.strftime(token.revoked_at, "%b %d, %Y")}
                       </span>
                     <% else %>
                       <span>
-                        Expired on {Calendar.strftime(token.expires_at, "%b %d, %Y")}
+                        {gettext("Expired on")} {Calendar.strftime(token.expires_at, "%b %d, %Y")}
                       </span>
                     <% end %>
                   </div>
@@ -365,12 +365,12 @@ defmodule AcaiWeb.TeamTokensLive do
 
         <%!-- team-tokens.USAGE.1 --%>
         <div id="usage-section" class="space-y-4">
-          <h2 class="text-base font-semibold">Usage</h2>
+          <h2 class="text-base font-semibold">{gettext("Usage")}</h2>
           <div class="rounded-xl border border-base-300 bg-base-100 p-8 text-center space-y-2">
             <.icon name="hero-chart-bar" class="size-8 text-base-content/20 mx-auto" />
-            <p class="font-medium text-base-content/50">Coming soon</p>
+            <p class="font-medium text-base-content/50">{gettext("Coming soon")}</p>
             <p class="text-sm text-base-content/40">
-              Token usage analytics will be available in a future release.
+              {gettext("Token usage analytics will be available in a future release.")}
             </p>
           </div>
         </div>
@@ -389,14 +389,14 @@ defmodule AcaiWeb.TeamTokensLive do
           >
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">
-                {if @created_token, do: "Token Created", else: "Create Access Token"}
+                {if @created_token, do: gettext("Token Created"), else: gettext("Create Access Token")}
               </h3>
               <button
                 id="close-create-modal-btn"
                 type="button"
                 phx-click="close_create_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -408,8 +408,8 @@ defmodule AcaiWeb.TeamTokensLive do
                 <div class="rounded-lg border border-warning/40 bg-warning/10 p-3 flex gap-2 text-sm text-warning-content">
                   <.icon name="hero-exclamation-triangle" class="size-5 shrink-0 text-warning mt-0.5" />
                   <p>
-                    Make sure to copy your token now.
-                    <strong>You won't be able to see it again.</strong>
+                    {gettext("Make sure to copy your token now.")}
+                    <strong>{gettext("You won't be able to see it again.")}</strong>
                   </p>
                 </div>
                 <%!-- team-tokens.MAIN.4-1 --%>
@@ -424,13 +424,13 @@ defmodule AcaiWeb.TeamTokensLive do
                     id="copy-token-btn"
                     type="button"
                     class="absolute top-2 right-2 btn btn-xs btn-ghost flex items-center gap-1.5"
-                    aria-label="Copy token"
+                    aria-label={gettext("Copy token")}
                   >
                     <span
                       id="copy-status"
                       class="hidden text-[10px] font-bold uppercase tracking-wider text-success"
                     >
-                      Copied!
+                      {gettext("Copied!")}
                     </span>
                     <span id="copy-icon-container">
                       <.icon name="hero-clipboard" class="size-4" />
@@ -465,7 +465,7 @@ defmodule AcaiWeb.TeamTokensLive do
                 </script>
                 <div class="flex justify-end">
                   <.button id="dismiss-token-btn" phx-click="dismiss_token" variant="primary">
-                    Done
+                    {gettext("Done")}
                   </.button>
                 </div>
               </div>
@@ -482,24 +482,24 @@ defmodule AcaiWeb.TeamTokensLive do
                 <.input
                   field={@create_form[:name]}
                   type="text"
-                  label="Token name"
-                  placeholder="e.g. Agentic CLI V1"
+                  label={gettext("Token name")}
+                  placeholder={gettext("e.g. Agentic CLI V1")}
                   autocomplete="off"
                 />
                 <.input
                   field={@create_form[:expires_at_local]}
                   type="datetime-local"
-                  label="Expiration (optional)"
+                  label={gettext("Expiration (optional)")}
                 />
                 <p class="text-xs text-base-content/50 -mt-2">
-                  Leave blank for a non-expiring token.
+                  {gettext("Leave blank for a non-expiring token.")}
                 </p>
                 <div class="flex gap-3 justify-end pt-1">
                   <.button type="button" phx-click="close_create_modal" id="cancel-create-btn">
-                    Cancel
+                    {gettext("Cancel")}
                   </.button>
                   <.button type="submit" variant="primary" id="submit-create-token-btn">
-                    Create Token
+                    {gettext("Create Token")}
                   </.button>
                 </div>
               </.form>
@@ -520,13 +520,13 @@ defmodule AcaiWeb.TeamTokensLive do
             phx-click-away="close_revoke_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Revoke Token</h3>
+              <h3 class="text-lg font-semibold">{gettext("Revoke Token")}</h3>
               <button
                 id="close-revoke-modal-btn"
                 type="button"
                 phx-click="close_revoke_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -534,7 +534,7 @@ defmodule AcaiWeb.TeamTokensLive do
 
             <div class="space-y-2">
               <p class="text-sm">
-                Are you sure you want to revoke this token?
+                {gettext("Are you sure you want to revoke this token?")}
                 <%= if @revoking_token do %>
                   <span class="font-medium">{@revoking_token.name}</span>
                 <% end %>
@@ -542,7 +542,7 @@ defmodule AcaiWeb.TeamTokensLive do
               <div class="alert alert-warning text-sm">
                 <.icon name="hero-exclamation-triangle" class="size-5 shrink-0" />
                 <p>
-                  This action is immediate and cannot be undone. Any API clients using this token will lose access instantly.
+                  {gettext("This action is immediate and cannot be undone. Any API clients using this token will lose access instantly.")}
                 </p>
               </div>
             </div>
@@ -557,7 +557,7 @@ defmodule AcaiWeb.TeamTokensLive do
                 phx-click="confirm_revoke"
                 class="btn btn-error"
               >
-                <.icon name="hero-x-circle" class="size-4 mr-1" /> Revoke Token
+                <.icon name="hero-x-circle" class="size-4 mr-1" /> {gettext("Revoke Token")}
               </.button>
             </div>
           </div>
