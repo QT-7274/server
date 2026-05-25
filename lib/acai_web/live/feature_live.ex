@@ -14,7 +14,7 @@ defmodule AcaiWeb.FeatureLive do
     socket =
       socket
       |> assign(:team, team)
-      |> assign(:page_title, "Feature")
+      |> assign(:page_title, gettext("Feature"))
       # These will be populated by handle_params/3
       |> assign(:feature_name, nil)
       |> assign(:feature_description, nil)
@@ -276,7 +276,7 @@ defmodule AcaiWeb.FeatureLive do
       {:error, :feature_not_found} ->
         {:noreply,
          socket
-         |> put_flash(:error, "Feature not found")
+         |> put_flash(:error, gettext("Feature not found"))
          |> push_navigate(to: ~p"/t/#{team.name}")}
 
       {:ok, feature_data} ->
@@ -320,7 +320,7 @@ defmodule AcaiWeb.FeatureLive do
 
         <%!-- feature-view.MAIN.2: Page title with dropdown --%>
         <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-          <span class="text-2xl font-bold">Overview of the</span>
+          <span class="text-2xl font-bold">{gettext("Overview of the")}</span>
 
           <%!-- Feature dropdown with popover API --%>
           <div class="flex-shrink-0">
@@ -359,7 +359,7 @@ defmodule AcaiWeb.FeatureLive do
             </ul>
           </div>
 
-          <span class="text-2xl font-bold">feature</span>
+          <span class="text-2xl font-bold">{gettext("feature")}</span>
         </div>
 
         <%!-- feature-view.MAIN.1: Feature description --%>
@@ -368,14 +368,14 @@ defmodule AcaiWeb.FeatureLive do
         <% end %>
 
         <%!-- feature-view.MAIN.3: Section header --%>
-        <h2 class="text-lg font-semibold mb-4">Implementations of this feature</h2>
+        <h2 class="text-lg font-semibold mb-4">{gettext("Implementations of this feature")}</h2>
 
         <%!-- feature-view.MAIN.5 --%>
         <%= if @implementations_empty? do %>
           <%!-- feature-view.MAIN.5: Empty state --%>
           <div class="text-center py-12 rounded-xl border-2 border-dashed border-base-300">
             <.icon name="hero-code-bracket" class="size-12 text-base-content/30 mx-auto mb-4" />
-            <p class="text-base-content/60">No implementations found for this feature</p>
+            <p class="text-base-content/60">{gettext("No implementations found for this feature")}</p>
           </div>
         <% else %>
           <%!-- feature-view.HIERARCHY.1, feature-view.HIERARCHY.2: Hierarchy-friendly layout --%>
@@ -441,13 +441,13 @@ defmodule AcaiWeb.FeatureLive do
                           </h3>
                         </div>
                         <p class="text-xs text-base-content/50 mt-1">
-                          Created {Calendar.strftime(card.inserted_at, "%b %d, %Y")}
+                          {gettext("Created %{date}", date: Calendar.strftime(card.inserted_at, "%b %d, %Y"))}
                         </p>
                       </div>
 
                       <%!-- feature-view.MAIN.3: Requirement count --%>
                       <span class="badge badge-sm badge-ghost">
-                        {card.total_requirements} requirements
+                        {gettext("%{count} requirements", count: card.total_requirements)}
                       </span>
                     </div>
 

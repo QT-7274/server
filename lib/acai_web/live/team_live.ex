@@ -263,18 +263,18 @@ defmodule AcaiWeb.TeamLive do
       <div class="space-y-6">
         <%!-- team-view.MAIN.0: Page header --%>
         <.content_header
-          page_title="Team Overview"
+          page_title={gettext("Team Overview")}
           resource_name={@team.name}
           resource_icon="hero-user-group"
           resource_icon_color="accent"
           breadcrumb_items={[
-            %{label: "Overview", navigate: ~p"/t/#{@team.name}", icon: "hero-home"}
+            %{label: gettext("Overview"), navigate: ~p"/t/#{@team.name}", icon: "hero-home"}
           ]}
         >
           <:actions>
             <%!-- team-view.MAIN.3 --%>
             <.button id="team-settings-btn" navigate={"/t/#{@team.name}/settings"}>
-              <.icon name="hero-cog-6-tooth" class="size-4 mr-1" /> Settings
+              <.icon name="hero-cog-6-tooth" class="size-4 mr-1" /> {gettext("Settings")}
             </.button>
           </:actions>
         </.content_header>
@@ -282,15 +282,15 @@ defmodule AcaiWeb.TeamLive do
         <%!-- team-view.PRODUCTS.1 --%>
         <div class="space-y-4">
           <div>
-            <h2 class="text-base font-semibold">Products</h2>
-            <p class="text-sm text-base-content/60">Overview of products owned by this team</p>
+            <h2 class="text-base font-semibold">{gettext("Products")}</h2>
+            <p class="text-sm text-base-content/60">{gettext("Overview of products owned by this team")}</p>
           </div>
 
           <%= if @products == [] do %>
             <div class="text-center py-12 rounded-xl border-2 border-dashed border-base-300">
               <.icon name="hero-folder-open" class="size-12 text-base-content/30 mx-auto mb-4" />
               <p class="text-base-content/60">
-                This team does not have any products. Push a spec using the CLI.
+                {gettext("This team does not have any products. Push a spec using the CLI.")}
               </p>
             </div>
           <% else %>
@@ -321,8 +321,8 @@ defmodule AcaiWeb.TeamLive do
         <div class="space-y-4">
           <div class="flex items-center justify-between">
             <div>
-              <h2 class="text-base font-semibold">Members</h2>
-              <p class="text-sm text-base-content/60">People with access to this team</p>
+              <h2 class="text-base font-semibold">{gettext("Members")}</h2>
+              <p class="text-sm text-base-content/60">{gettext("People with access to this team")}</p>
             </div>
             <%!-- team-view.MEMBERS.2 --%>
             <%!-- team-view.MEMBERS.2-1 --%>
@@ -332,7 +332,7 @@ defmodule AcaiWeb.TeamLive do
               variant="primary"
               disabled={not @can_admin?}
             >
-              <.icon name="hero-user-plus" class="size-4 mr-1" /> Invite
+              <.icon name="hero-user-plus" class="size-4 mr-1" /> {gettext("Invite")}
             </.button>
           </div>
 
@@ -388,9 +388,9 @@ defmodule AcaiWeb.TeamLive do
               </div>
               <div class="flex-1">
                 <h3 class="font-semibold text-base group-hover:text-primary transition-colors">
-                  Access Tokens
+                  {gettext("Access Tokens")}
                 </h3>
-                <p class="text-sm text-base-content/60">Manage API tokens for this team</p>
+                <p class="text-sm text-base-content/60">{gettext("Manage API tokens for this team")}</p>
               </div>
               <.icon
                 name="hero-arrow-right"
@@ -403,18 +403,18 @@ defmodule AcaiWeb.TeamLive do
         <%= if @show_admin_section? do %>
           <div id="admin-section" class="space-y-4">
             <div>
-              <h2 class="text-base font-semibold">Admin</h2>
+              <h2 class="text-base font-semibold">{gettext("Admin")}</h2>
               <p class="text-sm text-base-content/60">
-                Access internal dashboard tools for monitoring the application
+                {gettext("Access internal dashboard tools for monitoring the application")}
               </p>
             </div>
 
             <div class="card bg-base-100 border border-base-300 shadow-sm">
               <div class="card-body gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div class="space-y-1">
-                  <h3 class="font-semibold text-base">Dashboard</h3>
+                  <h3 class="font-semibold text-base">{gettext("Dashboard")}</h3>
                   <p class="text-sm text-base-content/60">
-                    Review query performance and runtime health from the Phoenix dashboard
+                    {gettext("Review query performance and runtime health from the Phoenix dashboard")}
                   </p>
                 </div>
 
@@ -425,7 +425,7 @@ defmodule AcaiWeb.TeamLive do
                   navigate={~p"/admin/dashboard/home"}
                   variant="primary"
                 >
-                  <.icon name="hero-chart-bar-square" class="size-4 mr-1" /> Dashboard
+                  <.icon name="hero-chart-bar-square" class="size-4 mr-1" /> {gettext("Dashboard")}
                 </.button>
               </div>
             </div>
@@ -445,13 +445,13 @@ defmodule AcaiWeb.TeamLive do
             phx-click-away="close_invite_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Invite a team member</h3>
+              <h3 class="text-lg font-semibold">{gettext("Invite a team member")}</h3>
               <button
                 id="close-invite-modal-btn"
                 type="button"
                 phx-click="close_invite_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -474,7 +474,7 @@ defmodule AcaiWeb.TeamLive do
               <.input
                 field={@invite_form[:email]}
                 type="email"
-                label="Email address"
+                label={gettext("Email address")}
                 placeholder="member@example.com"
                 autocomplete="off"
               />
@@ -482,17 +482,17 @@ defmodule AcaiWeb.TeamLive do
               <.input
                 field={@invite_form[:role]}
                 type="select"
-                label="Role"
-                options={[{"Developer", "developer"}, {"Owner", "owner"}, {"Readonly", "readonly"}]}
+                label={gettext("Role")}
+                options={[{gettext("Developer"), "developer"}, {gettext("Owner"), "owner"}, {gettext("Readonly"), "readonly"}]}
               />
 
               <div class="flex gap-3 justify-end pt-1">
                 <.button type="button" phx-click="close_invite_modal">
-                  Cancel
+                  {gettext("Cancel")}
                 </.button>
                 <%!-- team-view.INVITE.3 --%>
                 <.button type="submit" variant="primary" id="send-invitation-btn">
-                  Send Invitation
+                  {gettext("Send Invitation")}
                 </.button>
               </div>
             </.form>
@@ -513,20 +513,20 @@ defmodule AcaiWeb.TeamLive do
             phx-click-away="close_edit_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Edit member role</h3>
+              <h3 class="text-lg font-semibold">{gettext("Edit member role")}</h3>
               <button
                 id="close-edit-modal-btn"
                 type="button"
                 phx-click="close_edit_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
             </div>
 
             <p class="text-sm text-base-content/60">
-              Editing role for
+              {gettext("Editing role for")}
               <span class="font-medium">{@editing_member && @editing_member.user.email}</span>
             </p>
 
@@ -547,17 +547,17 @@ defmodule AcaiWeb.TeamLive do
               <.input
                 field={@edit_form[:role]}
                 type="select"
-                label="Role"
-                options={[{"Developer", "developer"}, {"Owner", "owner"}, {"Readonly", "readonly"}]}
+                label={gettext("Role")}
+                options={[{gettext("Developer"), "developer"}, {gettext("Owner"), "owner"}, {gettext("Readonly"), "readonly"}]}
               />
 
               <div class="flex gap-3 justify-end pt-1">
                 <%!-- team-view.EDIT_ROLE.1 --%>
                 <.button type="button" phx-click="close_edit_modal" id="cancel-edit-btn">
-                  Cancel
+                  {gettext("Cancel")}
                 </.button>
                 <.button type="submit" variant="primary" id="save-role-btn">
-                  Save
+                  {gettext("Save")}
                 </.button>
               </div>
             </.form>
@@ -578,13 +578,13 @@ defmodule AcaiWeb.TeamLive do
             phx-click-away="close_delete_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Remove team member</h3>
+              <h3 class="text-lg font-semibold">{gettext("Remove team member")}</h3>
               <button
                 id="close-delete-modal-btn"
                 type="button"
                 phx-click="close_delete_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -593,19 +593,19 @@ defmodule AcaiWeb.TeamLive do
             <%!-- team-view.DELETE_ROLE.2 --%>
             <div class="space-y-2">
               <p class="text-sm">
-                You are about to remove
+                {gettext("You are about to remove")}
                 <span class="font-medium">
                   {@deleting_member && @deleting_member.user.email}
                 </span>
-                from <span class="font-medium">{@team.name}</span>.
+                {gettext("from")} <span class="font-medium">{@team.name}</span>.
               </p>
               <div class="alert alert-warning text-sm">
                 <.icon name="hero-exclamation-triangle" class="size-5 shrink-0" />
                 <div>
-                  <p class="font-semibold">This will:</p>
+                  <p class="font-semibold">{gettext("This will:")}</p>
                   <ul class="list-disc list-inside mt-1 space-y-0.5">
-                    <li>Revoke their access to this team</li>
-                    <li>Revoke all API access tokens they created for this team</li>
+                    <li>{gettext("Revoke their access to this team")}</li>
+                    <li>{gettext("Revoke all API access tokens they created for this team")}</li>
                   </ul>
                 </div>
               </div>
@@ -621,7 +621,7 @@ defmodule AcaiWeb.TeamLive do
             <div class="flex gap-3 justify-end pt-1">
               <%!-- team-view.DELETE_ROLE.1 --%>
               <.button type="button" phx-click="close_delete_modal" id="cancel-delete-btn">
-                Cancel
+                {gettext("Cancel")}
               </.button>
               <.button
                 type="button"
@@ -630,7 +630,7 @@ defmodule AcaiWeb.TeamLive do
                 id="confirm-delete-btn"
                 class="btn btn-error"
               >
-                Delete Member
+                {gettext("Delete Member")}
               </.button>
             </div>
           </div>

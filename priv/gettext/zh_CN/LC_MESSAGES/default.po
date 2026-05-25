@@ -1,0 +1,698 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lib/acai_web/components/core_components.ex:372
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr "操作"
+
+#: lib/acai_web/components/layouts.ex:309
+#: lib/acai_web/components/layouts.ex:321
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr "正在尝试重新连接"
+
+#: lib/acai_web/components/layouts.ex:130
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:9
+#: lib/acai_web/controllers/user_session_html/new.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Log in"
+msgstr "登录"
+
+#: lib/acai_web/components/layouts.ex:122
+#: lib/acai_web/components/layouts.ex:274
+#, elixir-autogen, elixir-format
+msgid "Log out"
+msgstr "退出登录"
+
+#: lib/acai_web/components/layouts.ex:132
+#, elixir-autogen, elixir-format
+msgid "Register"
+msgstr "注册"
+
+#: lib/acai_web/components/layouts.ex:107
+#: lib/acai_web/components/layouts.ex:262
+#: lib/acai_web/live/team_live.ex:277
+#, elixir-autogen, elixir-format
+msgid "Settings"
+msgstr "设置"
+
+#: lib/acai_web/components/layouts.ex:316
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr "出错了！"
+
+#: lib/acai_web/components/layouts.ex:304
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr "无法连接到网络"
+
+#: lib/acai_web/components/core_components.ex:74
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr "关闭"
+
+#: lib/acai_web/live/feature_live.ex:450
+#, elixir-autogen, elixir-format
+msgid "%{count} requirements"
+msgstr "%{count} 条需求"
+
+#: lib/acai_web/live/implementation_live.ex:1095
+#, elixir-autogen, elixir-format
+msgid "%{covered} of %{total}"
+msgstr "%{covered} / %{total}"
+
+#: lib/acai_web/live/implementation_live.ex:1094
+#, elixir-autogen, elixir-format
+msgid "%{pct}% covered"
+msgstr "已覆盖 %{pct}%"
+
+#: lib/acai_web/live/team_live.ex:391
+#, elixir-autogen, elixir-format
+msgid "Access Tokens"
+msgstr "访问令牌"
+
+#: lib/acai_web/live/team_live.ex:408
+#, elixir-autogen, elixir-format
+msgid "Access internal dashboard tools for monitoring the application"
+msgstr "访问用于监控应用的内部仪表盘工具"
+
+#: lib/acai_web/live/team_live.ex:406
+#, elixir-autogen, elixir-format
+msgid "Admin"
+msgstr "管理"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:7
+#, elixir-autogen, elixir-format
+msgid "Already registered?"
+msgstr "已经注册？"
+
+#: lib/acai_web/live/implementation_live.ex:1339
+#, elixir-autogen, elixir-format
+msgid "Branch"
+msgstr "分支"
+
+#: lib/acai_web/live/team_live.ex:491
+#: lib/acai_web/live/team_live.ex:557
+#: lib/acai_web/live/team_live.ex:624
+#: lib/acai_web/live/teams_live.ex:233
+#, elixir-autogen, elixir-format
+msgid "Cancel"
+msgstr "取消"
+
+#: lib/acai_web/live/team_live.ex:454
+#: lib/acai_web/live/team_live.ex:522
+#: lib/acai_web/live/team_live.ex:587
+#: lib/acai_web/live/teams_live.ex:206
+#, elixir-autogen, elixir-format
+msgid "Close"
+msgstr "关闭"
+
+#: lib/acai_web/live/implementation_live.ex:814
+#, elixir-autogen, elixir-format
+msgid "Comment exceeds the maximum length of %{max} characters"
+msgstr "评论超过最大长度 %{max} 个字符"
+
+#: lib/acai_web/live/teams_live.ex:77
+#: lib/acai_web/live/teams_live.ex:98
+#: lib/acai_web/live/teams_live.ex:237
+#, elixir-autogen, elixir-format
+msgid "Create Team"
+msgstr "创建团队"
+
+#: lib/acai_web/live/teams_live.ex:200
+#, elixir-autogen, elixir-format
+msgid "Create a new team"
+msgstr "创建新团队"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:28
+#, elixir-autogen, elixir-format
+msgid "Create an account"
+msgstr "创建账号"
+
+#: lib/acai_web/live/teams_live.ex:94
+#, elixir-autogen, elixir-format
+msgid "Create your first team to get started."
+msgstr "创建你的第一个团队以开始使用。"
+
+#: lib/acai_web/live/feature_live.ex:444
+#, elixir-autogen, elixir-format
+msgid "Created %{date}"
+msgstr "创建于 %{date}"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:27
+#, elixir-autogen, elixir-format
+msgid "Creating account..."
+msgstr "创建账号中..."
+
+#: lib/acai_web/live/team_live.ex:415
+#: lib/acai_web/live/team_live.ex:428
+#, elixir-autogen, elixir-format
+msgid "Dashboard"
+msgstr "仪表盘"
+
+#: lib/acai_web/live/team_live.ex:633
+#, elixir-autogen, elixir-format
+msgid "Delete Member"
+msgstr "删除成员"
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Developer"
+msgstr "开发者"
+
+#: lib/acai_web/live/teams_live.ex:151
+#, elixir-autogen, elixir-format
+msgid "Docs"
+msgstr "文档"
+
+#: lib/acai_web/live/teams_live.ex:135
+#, elixir-autogen, elixir-format
+msgid "Documentation and guides"
+msgstr "文档与指南"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:10
+#, elixir-autogen, elixir-format
+msgid "Don't have an account?"
+msgstr "还没有账号？"
+
+#: lib/acai_web/live/team_live.ex:516
+#, elixir-autogen, elixir-format
+msgid "Edit member role"
+msgstr "编辑成员角色"
+
+#: lib/acai_web/live/team_live.ex:529
+#, elixir-autogen, elixir-format
+msgid "Editing role for"
+msgstr "正在编辑角色"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:20
+#: lib/acai_web/controllers/user_session_html/new.html.heex:35
+#: lib/acai_web/controllers/user_session_html/new.html.heex:53
+#, elixir-autogen, elixir-format
+msgid "Email"
+msgstr "邮箱"
+
+#: lib/acai_web/live/team_live.ex:477
+#, elixir-autogen, elixir-format
+msgid "Email address"
+msgstr "邮箱地址"
+
+#: lib/acai_web/live/implementation_live.ex:1779
+#, elixir-autogen, elixir-format
+msgid "Failed to update comment"
+msgstr "更新评论失败"
+
+#: lib/acai_web/live/implementation_live.ex:1759
+#, elixir-autogen, elixir-format
+msgid "Failed to update status"
+msgstr "更新状态失败"
+
+#: lib/acai_web/live/feature_live.ex:17
+#: lib/acai_web/live/product_live.ex:275
+#: lib/acai_web/live/product_live.ex:287
+#, elixir-autogen, elixir-format
+msgid "Feature"
+msgstr "功能"
+
+#: lib/acai_web/live/implementation_live.ex:1030
+#, elixir-autogen, elixir-format
+msgid "Feature Settings"
+msgstr "功能设置"
+
+#: lib/acai_web/live/feature_live.ex:279
+#, elixir-autogen, elixir-format
+msgid "Feature not found"
+msgstr "未找到该功能"
+
+#: lib/acai_web/live/implementation_live.ex:118
+#: lib/acai_web/live/implementation_live.ex:311
+#, elixir-autogen, elixir-format
+msgid "Feature not found for this implementation"
+msgstr "该实现下未找到此功能"
+
+#: lib/acai_web/live/teams_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "Getting Started"
+msgstr "快速开始"
+
+#: lib/acai_web/live/teams_live.ex:153
+#, elixir-autogen, elixir-format
+msgid "Guides & API reference"
+msgstr "指南与 API 参考"
+
+#: lib/acai_web/live/implementation_live.ex:1041
+#, elixir-autogen, elixir-format
+msgid "Impl. Settings"
+msgstr "实现设置"
+
+#: lib/acai_web/live/product_live.ex:281
+#, elixir-autogen, elixir-format
+msgid "Implementation (% accepted)"
+msgstr "实现（已接受 %）"
+
+#: lib/acai_web/live/implementation_live.ex:717
+#, elixir-autogen, elixir-format
+msgid "Implementation is not available for this feature"
+msgstr "该实现不可用于此功能"
+
+#: lib/acai_web/live/implementation_live.ex:84
+#: lib/acai_web/live/implementation_live.ex:97
+#: lib/acai_web/live/implementation_live.ex:627
+#: lib/acai_web/live/implementation_live.ex:640
+#, elixir-autogen, elixir-format
+msgid "Implementation not found"
+msgstr "未找到该实现"
+
+#: lib/acai_web/live/feature_live.ex:371
+#, elixir-autogen, elixir-format
+msgid "Implementations of this feature"
+msgstr "该功能的实现"
+
+#: lib/acai_web/live/implementation_live.ex:1271
+#: lib/acai_web/live/implementation_live.ex:1442
+#, elixir-autogen, elixir-format
+msgid "Inherited"
+msgstr "继承"
+
+#: lib/acai_web/live/implementation_live.ex:757
+#: lib/acai_web/live/implementation_live.ex:801
+#, elixir-autogen, elixir-format
+msgid "Invalid requirement"
+msgstr "无效的需求"
+
+#: lib/acai_web/live/implementation_live.ex:774
+#, elixir-autogen, elixir-format
+msgid "Invalid status value"
+msgstr "无效的状态值"
+
+#: lib/acai_web/live/team_live.ex:335
+#, elixir-autogen, elixir-format
+msgid "Invite"
+msgstr "邀请"
+
+#: lib/acai_web/live/team_live.ex:448
+#, elixir-autogen, elixir-format
+msgid "Invite a team member"
+msgstr "邀请团队成员"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:66
+#, elixir-autogen, elixir-format
+msgid "Log in and stay logged in"
+msgstr "登录并保持登录状态"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:69
+#, elixir-autogen, elixir-format
+msgid "Log in only this time"
+msgstr "仅此次登录"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:42
+#, elixir-autogen, elixir-format
+msgid "Log in with email"
+msgstr "使用邮箱登录"
+
+#: lib/acai_web/live/teams_live.ex:228
+#, elixir-autogen, elixir-format
+msgid "Lowercase letters, numbers, and hyphens only."
+msgstr "仅支持小写字母、数字和连字符。"
+
+#: lib/acai_web/live/team_live.ex:393
+#, elixir-autogen, elixir-format
+msgid "Manage API tokens for this team"
+msgstr "管理该团队的 API 令牌"
+
+#: lib/acai_web/live/teams_live.ex:69
+#, elixir-autogen, elixir-format
+msgid "Manage your teams and create new ones."
+msgstr "管理你的团队并创建新团队。"
+
+#: lib/acai_web/live/team_live.ex:324
+#, elixir-autogen, elixir-format
+msgid "Members"
+msgstr "成员"
+
+#: lib/acai_web/live/teams_live.ex:134
+#, elixir-autogen, elixir-format
+msgid "More Resources"
+msgstr "更多资源"
+
+#: lib/acai_web/live/teams_live.ex:68
+#, elixir-autogen, elixir-format
+msgid "My Teams"
+msgstr "我的团队"
+
+#: lib/acai_web/live/implementation_live.ex:1451
+#, elixir-autogen, elixir-format
+msgid "No %{kind} for this implementation. They have been inherited from"
+msgstr "该实现尚无%{kind}，已从以下继承"
+
+#: lib/acai_web/live/product_live.ex:261
+#, elixir-autogen, elixir-format
+msgid "No active implementations"
+msgstr "没有活跃的实现"
+
+#: lib/acai_web/live/product_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "No features found"
+msgstr "未找到功能"
+
+#: lib/acai_web/live/feature_live.ex:378
+#, elixir-autogen, elixir-format
+msgid "No implementations found for this feature"
+msgstr "该功能没有找到任何实现"
+
+#: lib/acai_web/live/implementation_live.ex:1280
+#, elixir-autogen, elixir-format
+msgid "No spec has been pushed for this implementation. It has been inherited from"
+msgstr "该实现尚未推送任何 spec，已从以下继承"
+
+#: lib/acai_web/live/implementation_live.ex:1804
+#, elixir-autogen, elixir-format
+msgid "No status"
+msgstr "无状态"
+
+#: lib/acai_web/live/teams_live.ex:92
+#, elixir-autogen, elixir-format
+msgid "No teams yet"
+msgstr "还没有团队"
+
+#: lib/acai_web/live/implementation_live.ex:1375
+#, elixir-autogen, elixir-format
+msgid "No tracked branches"
+msgstr "没有跟踪的分支"
+
+#: lib/acai_web/live/team_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Overview"
+msgstr "概览"
+
+#: lib/acai_web/live/team_live.ex:286
+#, elixir-autogen, elixir-format
+msgid "Overview of products owned by this team"
+msgstr "该团队拥有的产品概览"
+
+#: lib/acai_web/live/feature_live.ex:323
+#: lib/acai_web/live/product_live.ex:208
+#, elixir-autogen, elixir-format
+msgid "Overview of the"
+msgstr "概览："
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Owner"
+msgstr "所有者"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:61
+#, elixir-autogen, elixir-format
+msgid "Password"
+msgstr "密码"
+
+#: lib/acai_web/live/implementation_live.ex:1348
+#, elixir-autogen, elixir-format
+msgid "Path"
+msgstr "路径"
+
+#: lib/acai_web/live/team_live.ex:325
+#, elixir-autogen, elixir-format
+msgid "People with access to this team"
+msgstr "可访问该团队的人员"
+
+#: lib/acai_web/live/product_live.ex:55
+#, elixir-autogen, elixir-format
+msgid "Product not found"
+msgstr "未找到该产品"
+
+#: lib/acai_web/live/team_live.ex:285
+#, elixir-autogen, elixir-format
+msgid "Products"
+msgstr "产品"
+
+#: lib/acai_web/live/teams_live.ex:176
+#, elixir-autogen, elixir-format
+msgid "Quick start guide"
+msgstr "快速入门指南"
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Readonly"
+msgstr "只读"
+
+#: lib/acai_web/live/implementation_live.ex:1636
+#, elixir-autogen, elixir-format
+msgid "Refs"
+msgstr "引用"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Register for an account"
+msgstr "注册账号"
+
+#: lib/acai_web/live/team_live.ex:581
+#, elixir-autogen, elixir-format
+msgid "Remove team member"
+msgstr "移除团队成员"
+
+#: lib/acai_web/live/implementation_live.ex:1305
+#, elixir-autogen, elixir-format
+msgid "Repo"
+msgstr "仓库"
+
+#: lib/acai_web/live/implementation_live.ex:1323
+#: lib/acai_web/live/implementation_live.ex:1401
+#, elixir-autogen, elixir-format
+msgid "Repository URI"
+msgstr "仓库 URI"
+
+#: lib/acai_web/live/implementation_live.ex:1624
+#, elixir-autogen, elixir-format
+msgid "Requirement"
+msgstr "需求"
+
+#: lib/acai_web/live/team_live.ex:417
+#, elixir-autogen, elixir-format
+msgid "Review query performance and runtime health from the Phoenix dashboard"
+msgstr "从 Phoenix 仪表盘查看查询性能与运行时健康状况"
+
+#: lib/acai_web/live/team_live.ex:608
+#, elixir-autogen, elixir-format
+msgid "Revoke all API access tokens they created for this team"
+msgstr "撤销其为该团队创建的所有 API 访问令牌"
+
+#: lib/acai_web/live/team_live.ex:607
+#, elixir-autogen, elixir-format
+msgid "Revoke their access to this team"
+msgstr "撤销其对该团队的访问权限"
+
+#: lib/acai_web/live/team_live.ex:485
+#: lib/acai_web/live/team_live.ex:550
+#, elixir-autogen, elixir-format
+msgid "Role"
+msgstr "角色"
+
+#: lib/acai_web/live/team_live.ex:560
+#, elixir-autogen, elixir-format
+msgid "Save"
+msgstr "保存"
+
+#: lib/acai_web/live/team_live.ex:495
+#, elixir-autogen, elixir-format
+msgid "Send Invitation"
+msgstr "发送邀请"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:14
+#, elixir-autogen, elixir-format
+msgid "Sign up"
+msgstr "立即注册"
+
+#: lib/acai_web/live/implementation_live.ex:1063
+#: lib/acai_web/live/implementation_live.ex:1477
+#: lib/acai_web/live/implementation_live.ex:1612
+#, elixir-autogen, elixir-format
+msgid "Status"
+msgstr "状态"
+
+#: lib/acai_web/live/implementation_live.ex:1260
+#, elixir-autogen, elixir-format
+msgid "Target Spec"
+msgstr "目标 Spec"
+
+#: lib/acai_web/live/team_live.ex:266
+#, elixir-autogen, elixir-format
+msgid "Team Overview"
+msgstr "团队概览"
+
+#: lib/acai_web/live/teams_live.ex:223
+#, elixir-autogen, elixir-format
+msgid "Team name"
+msgstr "团队名称"
+
+#: lib/acai_web/live/product_live.ex:14
+#, elixir-autogen, elixir-format
+msgid "Team not found"
+msgstr "未找到该团队"
+
+#: lib/acai_web/live/implementation_live.ex:1079
+#: lib/acai_web/live/implementation_live.ex:1478
+#, elixir-autogen, elixir-format
+msgid "Test Coverage"
+msgstr "测试覆盖率"
+
+#: lib/acai_web/live/product_live.ex:263
+#, elixir-autogen, elixir-format
+msgid "This product doesn't have any active implementations. Activate or add implementations to track completion."
+msgstr "该产品尚无活跃的实现。激活或添加实现以跟踪完成情况。"
+
+#: lib/acai_web/live/product_live.ex:258
+#, elixir-autogen, elixir-format
+msgid "This product doesn't have any feature specs yet. Add specs to see the completion matrix."
+msgstr "该产品尚无功能 spec。添加 spec 后可查看完成度矩阵。"
+
+#: lib/acai_web/live/team_live.ex:293
+#, elixir-autogen, elixir-format
+msgid "This team does not have any products. Push a spec using the CLI."
+msgstr "该团队尚无产品。请使用 CLI 推送一个 spec。"
+
+#: lib/acai_web/live/team_live.ex:605
+#, elixir-autogen, elixir-format
+msgid "This will:"
+msgstr "此操作将："
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:25
+#, elixir-autogen, elixir-format
+msgid "To see sent emails, visit"
+msgstr "查看已发送邮件，请访问"
+
+#: lib/acai_web/live/implementation_live.ex:1371
+#, elixir-autogen, elixir-format
+msgid "Tracked Branches"
+msgstr "跟踪的分支"
+
+#: lib/acai_web/live/team_live.ex:596
+#, elixir-autogen, elixir-format
+msgid "You are about to remove"
+msgstr "你即将移除"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:23
+#, elixir-autogen, elixir-format
+msgid "You are running the local mail adapter."
+msgstr "你正在使用本地邮件适配器。"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:8
+#, elixir-autogen, elixir-format
+msgid "You need to reauthenticate to perform sensitive actions on your account."
+msgstr "你需要重新认证才能对账号执行敏感操作。"
+
+#: lib/acai_web/live/implementation_live.ex:1810
+#, elixir-autogen, elixir-format
+msgid "accepted"
+msgstr "已接受"
+
+#: lib/acai_web/live/implementation_live.ex:1805
+#, elixir-autogen, elixir-format
+msgid "assigned"
+msgstr "已分配"
+
+#: lib/acai_web/live/implementation_live.ex:1806
+#, elixir-autogen, elixir-format
+msgid "blocked"
+msgstr "受阻"
+
+#: lib/acai_web/live/implementation_live.ex:1808
+#, elixir-autogen, elixir-format
+msgid "completed"
+msgstr "已完成"
+
+#: lib/acai_web/live/teams_live.ex:224
+#, elixir-autogen, elixir-format
+msgid "e.g. my-team"
+msgstr "例如：my-team"
+
+#: lib/acai_web/live/feature_live.ex:362
+#: lib/acai_web/live/implementation_live.ex:1248
+#, elixir-autogen, elixir-format
+msgid "feature"
+msgstr "功能"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:14
+#, elixir-autogen, elixir-format
+msgid "for an account now."
+msgstr "立即注册一个账号。"
+
+#: lib/acai_web/live/team_live.ex:600
+#, elixir-autogen, elixir-format
+msgid "from"
+msgstr "于"
+
+#: lib/acai_web/live/implementation_live.ex:1209
+#, elixir-autogen, elixir-format
+msgid "implementation of the"
+msgstr "实现："
+
+#: lib/acai_web/live/implementation_live.ex:1807
+#, elixir-autogen, elixir-format
+msgid "incomplete"
+msgstr "未完成"
+
+#: lib/acai_web/live/implementation_live.ex:1479
+#, elixir-autogen, elixir-format
+msgid "items have been added"
+msgstr "条目已添加"
+
+#: lib/acai_web/live/product_live.ex:359
+#, elixir-autogen, elixir-format
+msgid "n/a"
+msgstr "无"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:46
+#, elixir-autogen, elixir-format
+msgid "or"
+msgstr "或"
+
+#: lib/acai_web/live/implementation_live.ex:1291
+#: lib/acai_web/live/implementation_live.ex:1462
+#, elixir-autogen, elixir-format
+msgid "parent implementation"
+msgstr "父级实现"
+
+#: lib/acai_web/live/product_live.ex:248
+#, elixir-autogen, elixir-format
+msgid "product"
+msgstr "产品"
+
+#: lib/acai_web/live/implementation_live.ex:1478
+#, elixir-autogen, elixir-format
+msgid "refs have been pushed"
+msgstr "引用已推送"
+
+#: lib/acai_web/live/implementation_live.ex:1809
+#, elixir-autogen, elixir-format
+msgid "rejected"
+msgstr "已拒绝"
+
+#: lib/acai_web/live/implementation_live.ex:1477
+#, elixir-autogen, elixir-format
+msgid "states have been added"
+msgstr "状态已添加"
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:25
+#, elixir-autogen, elixir-format
+msgid "the mailbox page"
+msgstr "邮箱页面"
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:11
+#, elixir-autogen, elixir-format
+msgid "to your account now."
+msgstr "登录到你的账号。"

@@ -11,7 +11,7 @@ defmodule AcaiWeb.ProductLive do
       {:error, :not_found} ->
         {:ok,
          socket
-         |> put_flash(:error, "Team not found")
+         |> put_flash(:error, gettext("Team not found"))
          |> push_navigate(to: ~p"/")}
 
       {:ok, team} ->
@@ -52,7 +52,7 @@ defmodule AcaiWeb.ProductLive do
       {:error, :not_found} ->
         socket =
           socket
-          |> put_flash(:error, "Product not found")
+          |> put_flash(:error, gettext("Product not found"))
           |> push_navigate(to: ~p"/t/#{team.name}")
 
         {:noreply, socket}
@@ -205,7 +205,7 @@ defmodule AcaiWeb.ProductLive do
 
         <%!-- Page title with product selector --%>
         <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-          <span class="text-2xl font-bold">Overview of the</span>
+          <span class="text-2xl font-bold">{gettext("Overview of the")}</span>
 
           <%!-- product-view.PRODUCT_SELECTOR.1: Dropdown lists all products in the current team --%>
           <div class="flex-shrink-0" id="product-selector-container">
@@ -245,7 +245,7 @@ defmodule AcaiWeb.ProductLive do
             </ul>
           </div>
 
-          <span class="text-2xl font-bold">product</span>
+          <span class="text-2xl font-bold">{gettext("product")}</span>
         </div>
 
         <%!-- product-view.MATRIX.6: Empty state shown if product has no features or implementations --%>
@@ -253,14 +253,14 @@ defmodule AcaiWeb.ProductLive do
           <div class="text-center py-16 bg-base-200/50 rounded-lg border border-base-300">
             <.icon name="hero-table-cells" class="size-16 text-base-content/20 mx-auto mb-4" />
             <%= if @no_features? do %>
-              <h3 class="text-lg font-medium mb-2">No features found</h3>
+              <h3 class="text-lg font-medium mb-2">{gettext("No features found")}</h3>
               <p class="text-base-content/60 max-w-md mx-auto">
-                This product doesn't have any feature specs yet. Add specs to see the completion matrix.
+                {gettext("This product doesn't have any feature specs yet. Add specs to see the completion matrix.")}
               </p>
             <% else %>
-              <h3 class="text-lg font-medium mb-2">No active implementations</h3>
+              <h3 class="text-lg font-medium mb-2">{gettext("No active implementations")}</h3>
               <p class="text-base-content/60 max-w-md mx-auto">
-                This product doesn't have any active implementations. Activate or add implementations to track completion.
+                {gettext("This product doesn't have any active implementations. Activate or add implementations to track completion.")}
               </p>
             <% end %>
           </div>
@@ -272,19 +272,19 @@ defmodule AcaiWeb.ProductLive do
                 <%!-- Label row for implementation columns --%>
                 <tr class="bg-base-100">
                   <th class="sticky left-0 bg-base-100 z-10 lg:min-w-[200px] bg-base-200 border-0">
-                    <span class="sr-only">Feature</span>
+                    <span class="sr-only">{gettext("Feature")}</span>
                   </th>
                   <th
                     colspan={length(@active_implementations)}
                     class="text-center py-2 text-sm font-medium text-secondary border-base-300 rounded-t-lg border-1 border-r-0"
                   >
-                    Implementation (% accepted)
+                    {gettext("Implementation (% accepted)")}
                   </th>
                 </tr>
                 <tr class="bg-base-100">
                   <%!-- Feature name column header --%>
                   <th class="sticky left-0 bg-base-100 z-10 lg:min-w-[200px] lg:py-2 text-sm font-medium text-primary rounded-tl-lg border-t-1 border-l-1 border-base-300">
-                    Feature
+                    {gettext("Feature")}
                   </th>
                   <%!-- Implementation column headers --%>
                   <%= for impl <- @active_implementations do %>
@@ -356,7 +356,7 @@ defmodule AcaiWeb.ProductLive do
                         </.link>
                       <% else %>
                         <div class="block py-4 lg:px-2 text-base-content/30">
-                          <span class="text-sm">n/a</span>
+                          <span class="text-sm">{gettext("n/a")}</span>
                         </div>
                       <% end %>
                     </td>

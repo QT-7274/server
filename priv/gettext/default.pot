@@ -1,0 +1,698 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new messages manually only if they're dynamic
+## messages that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here has no
+## effect: edit them in PO (.po) files instead.
+#
+msgid ""
+msgstr ""
+
+#: lib/acai_web/components/core_components.ex:372
+#, elixir-autogen, elixir-format
+msgid "Actions"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:309
+#: lib/acai_web/components/layouts.ex:321
+#, elixir-autogen, elixir-format
+msgid "Attempting to reconnect"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:130
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:9
+#: lib/acai_web/controllers/user_session_html/new.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Log in"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:122
+#: lib/acai_web/components/layouts.ex:274
+#, elixir-autogen, elixir-format
+msgid "Log out"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:132
+#, elixir-autogen, elixir-format
+msgid "Register"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:107
+#: lib/acai_web/components/layouts.ex:262
+#: lib/acai_web/live/team_live.ex:277
+#, elixir-autogen, elixir-format
+msgid "Settings"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:316
+#, elixir-autogen, elixir-format
+msgid "Something went wrong!"
+msgstr ""
+
+#: lib/acai_web/components/layouts.ex:304
+#, elixir-autogen, elixir-format
+msgid "We can't find the internet"
+msgstr ""
+
+#: lib/acai_web/components/core_components.ex:74
+#, elixir-autogen, elixir-format
+msgid "close"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:450
+#, elixir-autogen, elixir-format
+msgid "%{count} requirements"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1095
+#, elixir-autogen, elixir-format
+msgid "%{covered} of %{total}"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1094
+#, elixir-autogen, elixir-format
+msgid "%{pct}% covered"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:391
+#, elixir-autogen, elixir-format
+msgid "Access Tokens"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:408
+#, elixir-autogen, elixir-format
+msgid "Access internal dashboard tools for monitoring the application"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:406
+#, elixir-autogen, elixir-format
+msgid "Admin"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:7
+#, elixir-autogen, elixir-format
+msgid "Already registered?"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1339
+#, elixir-autogen, elixir-format
+msgid "Branch"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:491
+#: lib/acai_web/live/team_live.ex:557
+#: lib/acai_web/live/team_live.ex:624
+#: lib/acai_web/live/teams_live.ex:233
+#, elixir-autogen, elixir-format
+msgid "Cancel"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:454
+#: lib/acai_web/live/team_live.ex:522
+#: lib/acai_web/live/team_live.ex:587
+#: lib/acai_web/live/teams_live.ex:206
+#, elixir-autogen, elixir-format
+msgid "Close"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:814
+#, elixir-autogen, elixir-format
+msgid "Comment exceeds the maximum length of %{max} characters"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:77
+#: lib/acai_web/live/teams_live.ex:98
+#: lib/acai_web/live/teams_live.ex:237
+#, elixir-autogen, elixir-format
+msgid "Create Team"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:200
+#, elixir-autogen, elixir-format
+msgid "Create a new team"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:28
+#, elixir-autogen, elixir-format
+msgid "Create an account"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:94
+#, elixir-autogen, elixir-format
+msgid "Create your first team to get started."
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:444
+#, elixir-autogen, elixir-format
+msgid "Created %{date}"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:27
+#, elixir-autogen, elixir-format
+msgid "Creating account..."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:415
+#: lib/acai_web/live/team_live.ex:428
+#, elixir-autogen, elixir-format
+msgid "Dashboard"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:633
+#, elixir-autogen, elixir-format
+msgid "Delete Member"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Developer"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:151
+#, elixir-autogen, elixir-format
+msgid "Docs"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:135
+#, elixir-autogen, elixir-format
+msgid "Documentation and guides"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:10
+#, elixir-autogen, elixir-format
+msgid "Don't have an account?"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:516
+#, elixir-autogen, elixir-format
+msgid "Edit member role"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:529
+#, elixir-autogen, elixir-format
+msgid "Editing role for"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:20
+#: lib/acai_web/controllers/user_session_html/new.html.heex:35
+#: lib/acai_web/controllers/user_session_html/new.html.heex:53
+#, elixir-autogen, elixir-format
+msgid "Email"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:477
+#, elixir-autogen, elixir-format
+msgid "Email address"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1779
+#, elixir-autogen, elixir-format
+msgid "Failed to update comment"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1759
+#, elixir-autogen, elixir-format
+msgid "Failed to update status"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:17
+#: lib/acai_web/live/product_live.ex:275
+#: lib/acai_web/live/product_live.ex:287
+#, elixir-autogen, elixir-format
+msgid "Feature"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1030
+#, elixir-autogen, elixir-format
+msgid "Feature Settings"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:279
+#, elixir-autogen, elixir-format
+msgid "Feature not found"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:118
+#: lib/acai_web/live/implementation_live.ex:311
+#, elixir-autogen, elixir-format
+msgid "Feature not found for this implementation"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:174
+#, elixir-autogen, elixir-format
+msgid "Getting Started"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:153
+#, elixir-autogen, elixir-format
+msgid "Guides & API reference"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1041
+#, elixir-autogen, elixir-format
+msgid "Impl. Settings"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:281
+#, elixir-autogen, elixir-format
+msgid "Implementation (% accepted)"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:717
+#, elixir-autogen, elixir-format
+msgid "Implementation is not available for this feature"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:84
+#: lib/acai_web/live/implementation_live.ex:97
+#: lib/acai_web/live/implementation_live.ex:627
+#: lib/acai_web/live/implementation_live.ex:640
+#, elixir-autogen, elixir-format
+msgid "Implementation not found"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:371
+#, elixir-autogen, elixir-format
+msgid "Implementations of this feature"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1271
+#: lib/acai_web/live/implementation_live.ex:1442
+#, elixir-autogen, elixir-format
+msgid "Inherited"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:757
+#: lib/acai_web/live/implementation_live.ex:801
+#, elixir-autogen, elixir-format
+msgid "Invalid requirement"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:774
+#, elixir-autogen, elixir-format
+msgid "Invalid status value"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:335
+#, elixir-autogen, elixir-format
+msgid "Invite"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:448
+#, elixir-autogen, elixir-format
+msgid "Invite a team member"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:66
+#, elixir-autogen, elixir-format
+msgid "Log in and stay logged in"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:69
+#, elixir-autogen, elixir-format
+msgid "Log in only this time"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:42
+#, elixir-autogen, elixir-format
+msgid "Log in with email"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:228
+#, elixir-autogen, elixir-format
+msgid "Lowercase letters, numbers, and hyphens only."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:393
+#, elixir-autogen, elixir-format
+msgid "Manage API tokens for this team"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:69
+#, elixir-autogen, elixir-format
+msgid "Manage your teams and create new ones."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:324
+#, elixir-autogen, elixir-format
+msgid "Members"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:134
+#, elixir-autogen, elixir-format
+msgid "More Resources"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:68
+#, elixir-autogen, elixir-format
+msgid "My Teams"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1451
+#, elixir-autogen, elixir-format
+msgid "No %{kind} for this implementation. They have been inherited from"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:261
+#, elixir-autogen, elixir-format
+msgid "No active implementations"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "No features found"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:378
+#, elixir-autogen, elixir-format
+msgid "No implementations found for this feature"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1280
+#, elixir-autogen, elixir-format
+msgid "No spec has been pushed for this implementation. It has been inherited from"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1804
+#, elixir-autogen, elixir-format
+msgid "No status"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:92
+#, elixir-autogen, elixir-format
+msgid "No teams yet"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1375
+#, elixir-autogen, elixir-format
+msgid "No tracked branches"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Overview"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:286
+#, elixir-autogen, elixir-format
+msgid "Overview of products owned by this team"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:323
+#: lib/acai_web/live/product_live.ex:208
+#, elixir-autogen, elixir-format
+msgid "Overview of the"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Owner"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:61
+#, elixir-autogen, elixir-format
+msgid "Password"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1348
+#, elixir-autogen, elixir-format
+msgid "Path"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:325
+#, elixir-autogen, elixir-format
+msgid "People with access to this team"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:55
+#, elixir-autogen, elixir-format
+msgid "Product not found"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:285
+#, elixir-autogen, elixir-format
+msgid "Products"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:176
+#, elixir-autogen, elixir-format
+msgid "Quick start guide"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:486
+#: lib/acai_web/live/team_live.ex:551
+#, elixir-autogen, elixir-format
+msgid "Readonly"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1636
+#, elixir-autogen, elixir-format
+msgid "Refs"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:5
+#, elixir-autogen, elixir-format
+msgid "Register for an account"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:581
+#, elixir-autogen, elixir-format
+msgid "Remove team member"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1305
+#, elixir-autogen, elixir-format
+msgid "Repo"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1323
+#: lib/acai_web/live/implementation_live.ex:1401
+#, elixir-autogen, elixir-format
+msgid "Repository URI"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1624
+#, elixir-autogen, elixir-format
+msgid "Requirement"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:417
+#, elixir-autogen, elixir-format
+msgid "Review query performance and runtime health from the Phoenix dashboard"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:608
+#, elixir-autogen, elixir-format
+msgid "Revoke all API access tokens they created for this team"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:607
+#, elixir-autogen, elixir-format
+msgid "Revoke their access to this team"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:485
+#: lib/acai_web/live/team_live.ex:550
+#, elixir-autogen, elixir-format
+msgid "Role"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:560
+#, elixir-autogen, elixir-format
+msgid "Save"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:495
+#, elixir-autogen, elixir-format
+msgid "Send Invitation"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:14
+#, elixir-autogen, elixir-format
+msgid "Sign up"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1063
+#: lib/acai_web/live/implementation_live.ex:1477
+#: lib/acai_web/live/implementation_live.ex:1612
+#, elixir-autogen, elixir-format
+msgid "Status"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1260
+#, elixir-autogen, elixir-format
+msgid "Target Spec"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:266
+#, elixir-autogen, elixir-format
+msgid "Team Overview"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:223
+#, elixir-autogen, elixir-format
+msgid "Team name"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:14
+#, elixir-autogen, elixir-format
+msgid "Team not found"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1079
+#: lib/acai_web/live/implementation_live.ex:1478
+#, elixir-autogen, elixir-format
+msgid "Test Coverage"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:263
+#, elixir-autogen, elixir-format
+msgid "This product doesn't have any active implementations. Activate or add implementations to track completion."
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:258
+#, elixir-autogen, elixir-format
+msgid "This product doesn't have any feature specs yet. Add specs to see the completion matrix."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:293
+#, elixir-autogen, elixir-format
+msgid "This team does not have any products. Push a spec using the CLI."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:605
+#, elixir-autogen, elixir-format
+msgid "This will:"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:25
+#, elixir-autogen, elixir-format
+msgid "To see sent emails, visit"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1371
+#, elixir-autogen, elixir-format
+msgid "Tracked Branches"
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:596
+#, elixir-autogen, elixir-format
+msgid "You are about to remove"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:23
+#, elixir-autogen, elixir-format
+msgid "You are running the local mail adapter."
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:8
+#, elixir-autogen, elixir-format
+msgid "You need to reauthenticate to perform sensitive actions on your account."
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1810
+#, elixir-autogen, elixir-format
+msgid "accepted"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1805
+#, elixir-autogen, elixir-format
+msgid "assigned"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1806
+#, elixir-autogen, elixir-format
+msgid "blocked"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1808
+#, elixir-autogen, elixir-format
+msgid "completed"
+msgstr ""
+
+#: lib/acai_web/live/teams_live.ex:224
+#, elixir-autogen, elixir-format
+msgid "e.g. my-team"
+msgstr ""
+
+#: lib/acai_web/live/feature_live.ex:362
+#: lib/acai_web/live/implementation_live.ex:1248
+#, elixir-autogen, elixir-format
+msgid "feature"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:14
+#, elixir-autogen, elixir-format
+msgid "for an account now."
+msgstr ""
+
+#: lib/acai_web/live/team_live.ex:600
+#, elixir-autogen, elixir-format
+msgid "from"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1209
+#, elixir-autogen, elixir-format
+msgid "implementation of the"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1807
+#, elixir-autogen, elixir-format
+msgid "incomplete"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1479
+#, elixir-autogen, elixir-format
+msgid "items have been added"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:359
+#, elixir-autogen, elixir-format
+msgid "n/a"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:46
+#, elixir-autogen, elixir-format
+msgid "or"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1291
+#: lib/acai_web/live/implementation_live.ex:1462
+#, elixir-autogen, elixir-format
+msgid "parent implementation"
+msgstr ""
+
+#: lib/acai_web/live/product_live.ex:248
+#, elixir-autogen, elixir-format
+msgid "product"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1478
+#, elixir-autogen, elixir-format
+msgid "refs have been pushed"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1809
+#, elixir-autogen, elixir-format
+msgid "rejected"
+msgstr ""
+
+#: lib/acai_web/live/implementation_live.ex:1477
+#, elixir-autogen, elixir-format
+msgid "states have been added"
+msgstr ""
+
+#: lib/acai_web/controllers/user_session_html/new.html.heex:25
+#, elixir-autogen, elixir-format
+msgid "the mailbox page"
+msgstr ""
+
+#: lib/acai_web/controllers/user_registration_html/new.html.heex:11
+#, elixir-autogen, elixir-format
+msgid "to your account now."
+msgstr ""

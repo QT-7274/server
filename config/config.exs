@@ -74,6 +74,11 @@ config :logger, :default_formatter,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Default Gettext locale. Per-request override happens in
+# AcaiWeb.Helpers.LocalePlug (browser pipeline). zh_CN is the
+# default for this fork.
+config :gettext, :default_locale, "zh_CN"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

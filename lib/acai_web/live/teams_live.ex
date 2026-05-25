@@ -65,8 +65,8 @@ defmodule AcaiWeb.TeamsLive do
       <div class="space-y-6 lg:space-y-8">
         <%!-- Page header --%>
         <.header>
-          My Teams
-          <:subtitle>Manage your teams and create new ones.</:subtitle>
+          {gettext("My Teams")}
+          <:subtitle>{gettext("Manage your teams and create new ones.")}</:subtitle>
           <:actions>
             <%!-- team-list.MAIN.1 --%>
             <.button
@@ -74,7 +74,7 @@ defmodule AcaiWeb.TeamsLive do
               phx-click="open_modal"
               variant="primary"
             >
-              <.icon name="hero-plus" class="size-4 mr-1" /> Create Team
+              <.icon name="hero-plus" class="size-4 mr-1" /> {gettext("Create Team")}
             </.button>
           </:actions>
         </.header>
@@ -89,13 +89,13 @@ defmodule AcaiWeb.TeamsLive do
               <.icon name="hero-user-group" class="size-10 text-base-content/40" />
             </div>
             <div>
-              <p class="text-lg font-semibold">No teams yet</p>
+              <p class="text-lg font-semibold">{gettext("No teams yet")}</p>
               <p class="text-sm text-base-content/60 mt-1">
-                Create your first team to get started.
+                {gettext("Create your first team to get started.")}
               </p>
             </div>
             <.button id="empty-state-create-team" phx-click="open_modal" variant="primary">
-              <.icon name="hero-plus" class="size-4 mr-1" /> Create Team
+              <.icon name="hero-plus" class="size-4 mr-1" /> {gettext("Create Team")}
             </.button>
           </div>
         <% end %>
@@ -131,8 +131,8 @@ defmodule AcaiWeb.TeamsLive do
         <%!-- More Resources section --%>
         <div class="space-y-4">
           <div>
-            <h2 class="text-base font-semibold">More Resources</h2>
-            <p class="text-sm text-base-content/60">Documentation and guides</p>
+            <h2 class="text-base font-semibold">{gettext("More Resources")}</h2>
+            <p class="text-sm text-base-content/60">{gettext("Documentation and guides")}</p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -148,9 +148,9 @@ defmodule AcaiWeb.TeamsLive do
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-base group-hover:text-accent transition-colors">
-                    Docs
+                    {gettext("Docs")}
                   </h3>
-                  <p class="text-sm text-base-content/60">Guides & API reference</p>
+                  <p class="text-sm text-base-content/60">{gettext("Guides & API reference")}</p>
                 </div>
                 <.icon
                   name="hero-arrow-top-right-on-square"
@@ -171,9 +171,9 @@ defmodule AcaiWeb.TeamsLive do
                 </div>
                 <div class="flex-1">
                   <h3 class="font-semibold text-base group-hover:text-accent transition-colors">
-                    Getting Started
+                    {gettext("Getting Started")}
                   </h3>
-                  <p class="text-sm text-base-content/60">Quick start guide</p>
+                  <p class="text-sm text-base-content/60">{gettext("Quick start guide")}</p>
                 </div>
                 <.icon
                   name="hero-arrow-top-right-on-square"
@@ -197,13 +197,13 @@ defmodule AcaiWeb.TeamsLive do
             phx-click-away="close_modal"
           >
             <div class="flex items-center justify-between">
-              <h3 class="text-lg font-semibold">Create a new team</h3>
+              <h3 class="text-lg font-semibold">{gettext("Create a new team")}</h3>
               <button
                 id="close-modal-button"
                 type="button"
                 phx-click="close_modal"
                 class="btn btn-ghost btn-sm btn-circle"
-                aria-label="Close"
+                aria-label={gettext("Close")}
               >
                 <.icon name="hero-x-mark" class="size-5" />
               </button>
@@ -220,21 +220,21 @@ defmodule AcaiWeb.TeamsLive do
               <.input
                 field={@form[:name]}
                 type="text"
-                label="Team name"
-                placeholder="e.g. my-team"
+                label={gettext("Team name")}
+                placeholder={gettext("e.g. my-team")}
                 autocomplete="off"
               />
               <p class="text-xs text-base-content/50 -mt-2">
-                Lowercase letters, numbers, and hyphens only.
+                {gettext("Lowercase letters, numbers, and hyphens only.")}
               </p>
 
               <div class="flex gap-3 justify-end pt-1">
                 <.button type="button" phx-click="close_modal">
-                  Cancel
+                  {gettext("Cancel")}
                 </.button>
                 <%!-- team-list.CREATE.3 --%>
                 <.button type="submit" variant="primary" id="create-team-submit">
-                  Create Team
+                  {gettext("Create Team")}
                 </.button>
               </div>
             </.form>

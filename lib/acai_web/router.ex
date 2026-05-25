@@ -13,6 +13,7 @@ defmodule AcaiWeb.Router do
     plug :put_content_security_policy
     plug :put_secure_browser_headers
     plug :fetch_current_scope_for_user
+    plug AcaiWeb.Helpers.LocalePlug
   end
 
   pipeline :api do

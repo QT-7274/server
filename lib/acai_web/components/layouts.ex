@@ -104,7 +104,7 @@ defmodule AcaiWeb.Layouts do
                 >
                   <li>
                     <.link href={~p"/users/settings"} class="flex items-center gap-2">
-                      <.icon name="hero-cog-6-tooth" class="size-4" /> Settings
+                      <.icon name="hero-cog-6-tooth" class="size-4" /> {gettext("Settings")}
                     </.link>
                   </li>
                   <li class="menu-title px-4 py-2">
@@ -119,7 +119,7 @@ defmodule AcaiWeb.Layouts do
                       method="delete"
                       class="flex items-center gap-2 text-error"
                     >
-                      <.icon name="hero-arrow-right-on-rectangle" class="size-4" /> Log out
+                      <.icon name="hero-arrow-right-on-rectangle" class="size-4" /> {gettext("Log out")}
                     </.link>
                   </li>
                 </ul>
@@ -127,9 +127,9 @@ defmodule AcaiWeb.Layouts do
             </div>
           <% else %>
             <ul class="menu menu-horizontal px-1 gap-2">
-              <li><.link href={~p"/users/log-in"} class="btn btn-ghost btn-sm">Log in</.link></li>
+              <li><.link href={~p"/users/log-in"} class="btn btn-ghost btn-sm">{gettext("Log in")}</.link></li>
               <li>
-                <.link href={~p"/users/register"} class="btn btn-primary btn-sm">Register</.link>
+                <.link href={~p"/users/register"} class="btn btn-primary btn-sm">{gettext("Register")}</.link>
               </li>
             </ul>
           <% end %>
@@ -259,7 +259,7 @@ defmodule AcaiWeb.Layouts do
               <%!-- nav.HEADER.3: Link to User Settings --%>
               <li>
                 <.link href={~p"/users/settings"} class="flex items-center gap-2">
-                  <.icon name="hero-cog-6-tooth" class="size-4" /> Settings
+                  <.icon name="hero-cog-6-tooth" class="size-4" /> {gettext("Settings")}
                 </.link>
               </li>
 
@@ -271,7 +271,7 @@ defmodule AcaiWeb.Layouts do
                   method="delete"
                   class="flex items-center gap-2 text-error"
                 >
-                  <.icon name="hero-arrow-right-on-rectangle" class="size-4" /> Log out
+                  <.icon name="hero-arrow-right-on-rectangle" class="size-4" /> {gettext("Log out")}
                 </.link>
               </li>
             </ul>

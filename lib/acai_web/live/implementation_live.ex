@@ -81,7 +81,7 @@ defmodule AcaiWeb.ImplementationLive do
         # feature-impl-view.ROUTING.3: Redirect if implementation not found
         socket =
           socket
-          |> put_flash(:error, "Implementation not found")
+          |> put_flash(:error, gettext("Implementation not found"))
           |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")
 
         {:ok, socket}
@@ -94,7 +94,7 @@ defmodule AcaiWeb.ImplementationLive do
           # Team mismatch - redirect
           socket =
             socket
-            |> put_flash(:error, "Implementation not found")
+            |> put_flash(:error, gettext("Implementation not found"))
             |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")
 
           {:ok, socket}
@@ -115,7 +115,7 @@ defmodule AcaiWeb.ImplementationLive do
         # No spec found for this feature anywhere in the ancestry
         socket =
           socket
-          |> put_flash(:error, "Feature not found for this implementation")
+          |> put_flash(:error, gettext("Feature not found for this implementation"))
           |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")
 
         {:ok, socket}
@@ -308,7 +308,7 @@ defmodule AcaiWeb.ImplementationLive do
         # No spec found - redirect
         socket =
           socket
-          |> put_flash(:error, "Feature not found for this implementation")
+          |> put_flash(:error, gettext("Feature not found for this implementation"))
           |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")
 
         {:ok, socket}
@@ -624,7 +624,7 @@ defmodule AcaiWeb.ImplementationLive do
       {:error, :not_found} ->
         {:noreply,
          socket
-         |> put_flash(:error, "Implementation not found")
+         |> put_flash(:error, gettext("Implementation not found"))
          |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")}
 
       {:ok, implementation} ->
@@ -637,7 +637,7 @@ defmodule AcaiWeb.ImplementationLive do
         else
           {:noreply,
            socket
-           |> put_flash(:error, "Implementation not found")
+           |> put_flash(:error, gettext("Implementation not found"))
            |> push_navigate(to: ~p"/t/#{team.name}/f/#{feature_name}")}
         end
     end
@@ -714,7 +714,7 @@ defmodule AcaiWeb.ImplementationLive do
       # Patch to the new URL without full page reload
       {:noreply, push_patch(socket, to: ~p"/t/#{team.name}/i/#{impl_slug}/f/#{feature_name}")}
     else
-      {:noreply, put_flash(socket, :error, "Implementation is not available for this feature")}
+      {:noreply, put_flash(socket, :error, gettext("Implementation is not available for this feature"))}
     end
   end
 
@@ -754,7 +754,7 @@ defmodule AcaiWeb.ImplementationLive do
     unless acid in valid_acids do
       {:noreply,
        socket
-       |> put_flash(:error, "Invalid requirement")}
+       |> put_flash(:error, gettext("Invalid requirement"))}
     else
       # feature-impl-view.INHERITANCE.2: Use resolved states for read/validation
       resolved_states = socket.assigns.states
@@ -771,7 +771,7 @@ defmodule AcaiWeb.ImplementationLive do
       unless normalized_status in [nil | @valid_statuses] do
         {:noreply,
          socket
-         |> put_flash(:error, "Invalid status value")}
+         |> put_flash(:error, gettext("Invalid status value"))}
       else
         # feature-impl-view.LIST.3-3: No-op if selecting the same status
         if current_status == normalized_status do
@@ -798,7 +798,7 @@ defmodule AcaiWeb.ImplementationLive do
     unless acid in valid_acids do
       {:noreply,
        socket
-       |> put_flash(:error, "Invalid requirement")}
+       |> put_flash(:error, gettext("Invalid requirement"))}
     else
       resolved_state_data = Map.get(socket.assigns.states, acid, %{})
       normalized_comment = normalize_state_comment(comment)
@@ -811,7 +811,7 @@ defmodule AcaiWeb.ImplementationLive do
            socket
            |> put_flash(
              :error,
-             "Comment exceeds the maximum length of #{max_comment_length} characters"
+             gettext("Comment exceeds the maximum length of %{max} characters", max: max_comment_length)
            )}
 
         current_comment == normalized_comment ->
@@ -1027,7 +1027,7 @@ defmodule AcaiWeb.ImplementationLive do
             phx-click="open_feature_settings"
             id="feature-settings-btn"
           >
-            <.icon name="hero-cog-6-tooth" class="size-5" /> Feature Settings
+            <.icon name="hero-cog-6-tooth" class="size-5" /> {gettext("Feature Settings")}
           </button>
 
           <%!-- feature-impl-view.MAIN.2: Renders an 'Implementation Settings' button --%>
@@ -1038,7 +1038,7 @@ defmodule AcaiWeb.ImplementationLive do
             phx-click="open_impl_settings"
             id="impl-settings-btn"
           >
-            <.icon name="hero-cog-6-tooth" class="size-5" /> Impl. Settings
+            <.icon name="hero-cog-6-tooth" class="size-5" /> {gettext("Impl. Settings")}
           </button>
         </div>
 
@@ -1060,7 +1060,7 @@ defmodule AcaiWeb.ImplementationLive do
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <%!-- implementation-view.REQ_COVERAGE.1 --%>
           <.coverage_section
-            title="Status"
+            title={gettext("Status")}
             inherited={@states_inherited}
             source_impl={@states_source_impl}
             feature_name={@feature_name}
@@ -1076,7 +1076,7 @@ defmodule AcaiWeb.ImplementationLive do
 
           <%!-- implementation-view.TEST_COVERAGE: Test coverage grid --%>
           <.coverage_section
-            title="Test Coverage"
+            title={gettext("Test Coverage")}
             inherited={@refs_inherited}
             source_impl={@refs_source_impl}
             feature_name={@feature_name}
@@ -1091,8 +1091,8 @@ defmodule AcaiWeb.ImplementationLive do
             <% coverage_pct =
               if total_reqs > 0, do: round(reqs_with_tests / total_reqs * 100), else: 0 %>
             <div class="mt-3 pt-3 border-t border-base-200 flex items-center justify-between text-sm">
-              <span class="text-base-content/50">{coverage_pct}% covered</span>
-              <span class="text-base-content/50">{reqs_with_tests} of {total_reqs}</span>
+              <span class="text-base-content/50">{gettext("%{pct}% covered", pct: coverage_pct)}</span>
+              <span class="text-base-content/50">{gettext("%{covered} of %{total}", covered: reqs_with_tests, total: total_reqs)}</span>
             </div>
           </.coverage_section>
         </div>
@@ -1206,7 +1206,7 @@ defmodule AcaiWeb.ImplementationLive do
         </ul>
       </div>
 
-      <span class="text-base lg:text-2xl font-bold">implementation of the</span>
+      <span class="text-base lg:text-2xl font-bold">{gettext("implementation of the")}</span>
 
       <%!-- Feature dropdown with popover API --%>
       <div class="flex-shrink-0">
@@ -1245,7 +1245,7 @@ defmodule AcaiWeb.ImplementationLive do
         </ul>
       </div>
 
-      <span class="text-base lg:text-2xl font-bold">feature</span>
+      <span class="text-base lg:text-2xl font-bold">{gettext("feature")}</span>
     </div>
     """
   end
@@ -1257,7 +1257,7 @@ defmodule AcaiWeb.ImplementationLive do
       <div class="card-body">
         <div class="flex items-center justify-between mb-2">
           <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider">
-            Target Spec
+            {gettext("Target Spec")}
           </h3>
           <%!-- feature-impl-view.CARDS.2-2: Inherited badge with popover --%>
           <%= if @spec_inherited do %>
@@ -1268,7 +1268,7 @@ defmodule AcaiWeb.ImplementationLive do
               popovertarget={spec_inherited_popover_id}
               style="anchor-name:--spec-inherited-anchor"
             >
-              <.icon name="hero-cloud-arrow-down" class="size-4" />Inherited
+              <.icon name="hero-cloud-arrow-down" class="size-4" />{gettext("Inherited")}
             </button>
             <div
               popover
@@ -1277,7 +1277,7 @@ defmodule AcaiWeb.ImplementationLive do
               style="position-anchor:--spec-inherited-anchor"
             >
               <p class="text-xs text-base-content/70">
-                No spec has been pushed for this implementation. It has been inherited from
+                {gettext("No spec has been pushed for this implementation. It has been inherited from")}
                 <%= if @spec_source_impl do %>
                   <.link
                     navigate={
@@ -1288,7 +1288,7 @@ defmodule AcaiWeb.ImplementationLive do
                     {@spec_source_impl.name}
                   </.link>
                 <% else %>
-                  parent implementation
+                  {gettext("parent implementation")}
                 <% end %>
               </p>
             </div>
@@ -1302,7 +1302,7 @@ defmodule AcaiWeb.ImplementationLive do
           <div class="flex items-center gap-2">
             <div class="w-20 flex-shrink-0 flex items-center gap-1.5 text-xs text-base-content/50">
               <.icon name="hero-code-bracket-square" class="size-4" />
-              <span>Repo</span>
+              <span>{gettext("Repo")}</span>
             </div>
             <%!-- feature-impl-view.CARDS.2-1: Repository badge opens a clickable popover --%>
             <button
@@ -1320,7 +1320,7 @@ defmodule AcaiWeb.ImplementationLive do
               class="dropdown rounded-box bg-base-100 shadow-sm border border-base-300 p-3 w-80 space-y-2"
               style="position-anchor:--target-spec-repo-anchor"
             >
-              <p class="text-xs uppercase tracking-wider text-base-content/50">Repository URI</p>
+              <p class="text-xs uppercase tracking-wider text-base-content/50">{gettext("Repository URI")}</p>
               <a
                 href={repo_http_url(@spec.branch.repo_uri)}
                 target="_blank"
@@ -1336,7 +1336,7 @@ defmodule AcaiWeb.ImplementationLive do
           <div class="flex items-center gap-2">
             <div class="w-20 flex-shrink-0 flex items-center gap-1.5 text-xs text-base-content/50">
               <.icon name="custom-git-branch" class="size-3.5" />
-              <span>Branch</span>
+              <span>{gettext("Branch")}</span>
             </div>
             <span class="text-sm">{@spec.branch.branch_name}</span>
           </div>
@@ -1345,7 +1345,7 @@ defmodule AcaiWeb.ImplementationLive do
           <div class="flex items-center gap-2">
             <div class="w-20 flex-shrink-0 flex items-center gap-1.5 text-xs text-base-content/50">
               <.icon name="hero-document-text" class="size-3.5" />
-              <span>Path</span>
+              <span>{gettext("Path")}</span>
             </div>
             <.link
               href={"#{repo_http_url(@spec.branch.repo_uri)}/blob/#{@spec.branch.branch_name}/#{@spec.path}"}
@@ -1368,11 +1368,11 @@ defmodule AcaiWeb.ImplementationLive do
     <div class="card bg-base-100 border border-base-300 shadow-sm">
       <div class="card-body p-4">
         <h3 class="text-sm font-medium text-base-content/70 uppercase tracking-wider mb-2 flex-shrink-0">
-          Tracked Branches
+          {gettext("Tracked Branches")}
         </h3>
 
         <%= if @branches == [] do %>
-          <p class="text-sm text-base-content/50 flex-shrink-0">No tracked branches</p>
+          <p class="text-sm text-base-content/50 flex-shrink-0">{gettext("No tracked branches")}</p>
         <% else %>
           <%!-- feature-impl-view.CARDS.3-1: Tracked branches use same repo display rules as target spec card --%>
           <%!-- Keep the title fixed and scroll only the list when enough rows accumulate --%>
@@ -1398,7 +1398,7 @@ defmodule AcaiWeb.ImplementationLive do
                 class="dropdown rounded-box bg-base-100 shadow-sm border border-base-300 p-3 w-80 space-y-2"
                 style={"position-anchor:--tracked-branch-repo-anchor-#{tracked_branch.branch_id}"}
               >
-                <p class="text-xs uppercase tracking-wider text-base-content/50">Repository URI</p>
+                <p class="text-xs uppercase tracking-wider text-base-content/50">{gettext("Repository URI")}</p>
                 <a
                   href={repo_http_url(tracked_branch.branch.repo_uri)}
                   target="_blank"
@@ -1439,7 +1439,7 @@ defmodule AcaiWeb.ImplementationLive do
               popovertarget={inherited_popover_id}
               style={"anchor-name:--inherited-anchor-#{@title |> String.downcase() |> String.replace(" ", "-")}"}
             >
-              <.icon name="hero-cloud-arrow-down" class="size-4" />Inherited
+              <.icon name="hero-cloud-arrow-down" class="size-4" />{gettext("Inherited")}
             </button>
             <div
               popover
@@ -1448,7 +1448,7 @@ defmodule AcaiWeb.ImplementationLive do
               style={"position-anchor:--inherited-anchor-#{@title |> String.downcase() |> String.replace(" ", "-")}"}
             >
               <p class="text-xs text-base-content/70">
-                No {inheritance_message(@title)} for this implementation. They have been inherited from
+                {gettext("No %{kind} for this implementation. They have been inherited from", kind: inheritance_message(@title))}
                 <%= if @source_impl do %>
                   <.link
                     navigate={
@@ -1459,7 +1459,7 @@ defmodule AcaiWeb.ImplementationLive do
                     {@source_impl.name}
                   </.link>
                 <% else %>
-                  parent implementation
+                  {gettext("parent implementation")}
                 <% end %>
               </p>
             </div>
@@ -1472,9 +1472,13 @@ defmodule AcaiWeb.ImplementationLive do
   end
 
   # Helper to get inheritance message based on section title
-  defp inheritance_message("Status"), do: "states have been added"
-  defp inheritance_message("Test Coverage"), do: "refs have been pushed"
-  defp inheritance_message(_), do: "items have been added"
+  defp inheritance_message(title) do
+    cond do
+      title == gettext("Status") -> gettext("states have been added")
+      title == gettext("Test Coverage") -> gettext("refs have been pushed")
+      true -> gettext("items have been added")
+    end
+  end
 
   # implementation-view.REQ_COVERAGE: status grid
   # feature-impl-view.LIST.2-3
@@ -1605,7 +1609,7 @@ defmodule AcaiWeb.ImplementationLive do
                   phx-value-field="status"
                   class="flex items-center gap-2"
                 >
-                  <span>Status</span>
+                  <span>{gettext("Status")}</span>
                   <.sort_icon sort_field={@sort_field} sort_dir={@sort_dir} column={:status} />
                 </button>
               </div>
@@ -1617,7 +1621,7 @@ defmodule AcaiWeb.ImplementationLive do
                   phx-value-field="requirement"
                   class="flex items-center gap-2"
                 >
-                  <span>Requirement</span>
+                  <span>{gettext("Requirement")}</span>
                   <.sort_icon sort_field={@sort_field} sort_dir={@sort_dir} column={:requirement} />
                 </button>
               </div>
@@ -1629,7 +1633,7 @@ defmodule AcaiWeb.ImplementationLive do
                   phx-value-field="refs_count"
                   class="inline-flex items-center gap-2"
                 >
-                  <span>Refs</span>
+                  <span>{gettext("Refs")}</span>
                   <.sort_icon sort_field={@sort_field} sort_dir={@sort_dir} column={:refs_count} />
                 </button>
               </div>
@@ -1725,7 +1729,7 @@ defmodule AcaiWeb.ImplementationLive do
         <% chip_class = metadata.chip_class %>
         <% effective_class = if @inherited, do: "#{chip_class}/30", else: chip_class %>
         <span class="flex items-center gap-1">
-          <span class={["w-2 h-2 rounded-sm", effective_class]} /> {metadata.label}
+          <span class={["w-2 h-2 rounded-sm", effective_class]} /> {translate_status_label(metadata.label)}
         </span>
       <% end %>
     </div>
@@ -1752,7 +1756,7 @@ defmodule AcaiWeb.ImplementationLive do
         refresh_implementation_data(socket)
 
       {:error, _changeset} ->
-        {:noreply, put_flash(socket, :error, "Failed to update status")}
+        {:noreply, put_flash(socket, :error, gettext("Failed to update status"))}
     end
   end
 
@@ -1772,7 +1776,7 @@ defmodule AcaiWeb.ImplementationLive do
         refresh_implementation_data(socket)
 
       {:error, _changeset} ->
-        {:noreply, put_flash(socket, :error, "Failed to update comment")}
+        {:noreply, put_flash(socket, :error, gettext("Failed to update comment"))}
     end
   end
 
@@ -1793,6 +1797,18 @@ defmodule AcaiWeb.ImplementationLive do
   end
 
   defp normalize_state_comment(_comment), do: nil
+
+  # Translate canonical status labels (kept in @status_metadata as raw strings so
+  # they remain pattern-matchable). Each branch must call gettext/1 with a
+  # literal so `mix gettext.extract` can see them.
+  defp translate_status_label("No status"), do: gettext("No status")
+  defp translate_status_label("assigned"), do: gettext("assigned")
+  defp translate_status_label("blocked"), do: gettext("blocked")
+  defp translate_status_label("incomplete"), do: gettext("incomplete")
+  defp translate_status_label("completed"), do: gettext("completed")
+  defp translate_status_label("rejected"), do: gettext("rejected")
+  defp translate_status_label("accepted"), do: gettext("accepted")
+  defp translate_status_label(label), do: label
 
   # Refresh implementation data after a state change
   # Uses the existing reload path to keep all UI components aligned
